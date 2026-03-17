@@ -1,0 +1,21 @@
+[project]
+name = "pipeline-smell-detection"
+version = "0.1.0"
+dependencies = [
+    "networkx>=2.8",
+    "pandas>=1.5",
+    "numpy>=1.23",
+    "scikit-learn>=1.2",
+    "matplotlib>=3.6",
+    "seaborn>=0.12",
+    "gitpython>=3.1",
+    "scipy>=1.10",
+    "typing-extensions",
+    "click>=8.0",
+    "tqdm>=4.64",
+    "graphviz>=0.20",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
