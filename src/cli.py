@@ -27,9 +27,13 @@ def cli(verbose: bool, log_file: Optional[str]):
     """
     # 配置日志
     log_level = LogLevel.DEBUG if verbose else LogLevel.INFO
-    Logger.setup(level=log_level, log_file=log_file)
+    default_log_file = log_file or 'logs/pipeline_detection.log'
+    Logger.setup(name='pipeline_detection', log_file=default_log_file, level=log_level.name)
     
-    Logger.info("Pipeline Smell Detection System启动")
+    # 使用类方法调用日志
+    logger = Logger.get_logger('pipeline_detection')
+    if logger:
+        logger.info("Pipeline Smell Detection System启动")
 
 
 @cli.command()
@@ -45,7 +49,8 @@ def detect(file_path: str, output: Optional[str], format: str,
     
     FILE_PATH: 要检测的Python文件路径
     """
-    Logger.info(f"开始检测文件: {file_path}")
+    logger = Logger.get_logger('pipeline_detection')
+    logger.info(f"开始检测文件: {file_path}")
     
     try:
         # 1. 提取Pipeline
@@ -53,10 +58,10 @@ def detect(file_path: str, output: Optional[str], format: str,
         pipeline = extractor.extract_from_file(file_path)
         
         if not pipeline:
-            Logger.warning(f"文件中未找到Pipeline: {file_path}")
+            logger.warning(f"文件中未找到Pipeline: {file_path}")
             sys.exit(0)
         
-        Logger.info(f"成功提取Pipeline: {len(pipeline.get_nodes())} 个操作节点")
+        logger.info(f"成功提取Pipeline: {len(pipeline.get_nodes())} 个操作节点")
         
         # 2. 运行检测器
         registry = DetectorRegistry()
@@ -93,7 +98,7 @@ def detect(file_path: str, output: Optional[str], format: str,
         click.echo(f"   报告已保存: {output_path}")
         
     except Exception as e:
-        Logger.error(f"检测失败: {e}")
+        logger.error(f"检测失败: {e}")
         sys.exit(1)
 
 
@@ -104,13 +109,14 @@ def detect(file_path: str, output: Optional[str], format: str,
               default='json', help='报告格式')
 @click.option('--recursive', '-r', is_flag=True, help='递归遍历子目录')
 @click.option('--pattern', default='*.py', help='文件匹配模式')
-def batch(directory: str, output: Optional[str], format: str, 
+def batch(directory: str, output: Optional[str], format: str,
           recursive: bool, pattern: str):
     """批量检测目录中的Python文件
     
     DIRECTORY: 要检测的目录路径
     """
-    Logger.info(f"开始批量检测目录: {directory}")
+    logger = Logger.get_logger('pipeline_detection')
+    logger.info(f"开始批量检测目录: {directory}")
     
     # 查找Python文件
     dir_path = Path(directory)
@@ -120,10 +126,10 @@ def batch(directory: str, output: Optional[str], format: str,
         files = list(dir_path.glob(pattern))
     
     if not files:
-        Logger.warning(f"未找到匹配的文件: {pattern}")
+        logger.warning(f"未找到匹配的文件: {pattern}")
         sys.exit(0)
     
-    Logger.info(f"找到 {len(files)} 个文件")
+    logger.info(f"找到 {len(files)} 个文件")
     
     # 准备输出目录
     output_dir = Path(output or f"{directory}/reports")
@@ -152,7 +158,7 @@ def batch(directory: str, output: Optional[str], format: str,
                 reporter.generate(result, str(output_file))
                 
         except Exception as e:
-            Logger.warning(f"文件 {file_path} 处理失败: {e}")
+            logger.warning(f"文件 {file_path} 处理失败: {e}")
     
     # 生成汇总报告
     summary_file = output_dir / f"summary.{format}"
@@ -172,7 +178,8 @@ def evaluate(ground_truth: str, output: Optional[str]):
     
     GROUND_TRUTH: Ground Truth数据集路径（JSON格式）
     """
-    Logger.info("开始评估实验")
+    logger = Logger.get_logger('pipeline_detection')
+    logger.info("开始评估实验")
     click.echo("⚠️  评估功能即将实现...")
     # TODO: 实现评估逻辑
     sys.exit(0)
