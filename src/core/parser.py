@@ -19,6 +19,13 @@ KEY_APIS = {
 }
 
 
+class ASTResult:
+    """AST解析结果数据类"""
+    def __init__(self, ast_tree: ast.Module, api_calls: List[Dict[str, Any]]):
+        self.ast_tree = ast_tree
+        self.api_calls = api_calls
+
+
 class ASTParser:
     """AST解析器
     
@@ -29,19 +36,39 @@ class ASTParser:
         """初始化AST解析器"""
         self._logger = Logger.setup('ast_parser', 'logs/ast_parser.log')
     
-    def parse_file(self, file_path: str) -> Optional[ast.Module]:
-        """解析Python文件为AST
+    def parse_file(self, file_path: str) -> Optional[ASTResult]:
+        """解析Python文件为AST并提取API调用
         
         Args:
             file_path: Python文件路径
             
         Returns:
-            AST模块节点，如果解析失败则返回None
+            ASTResult对象，包含AST树和API调用列表，如果解析失败则返回None
         """
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 code = f.read()
-            return ast.parse(code, filename=file_path)
+            ast_tree = ast.parse(code, filename=file_path)
+            
+            # 提取API调用
+            api_extractor = APIExtractor()
+            api_calls = api_extractor.extract_calls(ast_tree)
+            
+            # 为每个API调用添加唯一ID
+            for idx, call in enumerate(api_calls):
+                call['id'] = f"node_{idx}"
+                call['operation_type'] = self._infer_operation_type(call)
+                call['inputs'] = self._extract_inputs(call)
+                call['outputs'] = self._extract_outputs(call)
+                call['line_number'] = call.get('line_no', 0)
+                call['code_snippet'] = self._extract_code_snippet(code, call.get('line_no', 0))
+                call['location'] = f"{file_path}:{call.get('line_no', 0)}"
+                call['attributes'] = {
+                    'args': call.get('args', []),
+                    'kwargs': call.get('kwargs', {})
+                }
+            
+            return ASTResult(ast_tree, api_calls)
         except SyntaxError as e:
             self._logger.error(f"语法错误: {file_path} - {e}")
             return None
@@ -51,6 +78,113 @@ class ASTParser:
         except FileNotFoundError as e:
             self._logger.error(f"文件不存在: {file_path} - {e}")
             return None
+    
+    def _infer_operation_type(self, api_call: Dict[str, Any]) -> 'OperationType':
+        """推断操作类型
+        
+        Args:
+            api_call: API调用信息
+            
+        Returns:
+            OperationType枚举值
+        """
+        from src.core.pipeline import OperationType
+        
+        api_name = api_call.get('api_name', '').lower()
+        
+        # 数据加载
+        if api_name in ['read_csv', 'read_excel', 'read_json', 'read_sql', 'read_parquet']:
+            return OperationType.DATA_LOADING
+        
+        # 数据清洗
+        if api_name in ['fillna', 'dropna', 'drop_duplicates', 'replace']:
+            return OperationType.DATA_CLEANING
+        
+        # 特征工程
+        if api_name in ['standardscaler', 'minmaxscaler', 'onehotencoder', 'labelencoder']:
+            return OperationType.FEATURE_ENGINEERING
+        
+        # 训练测试划分
+        if api_name in ['train_test_split']:
+            return OperationType.TRAIN_TEST_SPLIT
+        
+        # 模型操作
+        if api_name in ['fit', 'predict', 'score', 'transform']:
+            return OperationType.MODEL_OPERATION
+        
+        # 验证
+        if api_name in ['cross_val_score', 'kfold', 'stratifiedkfold']:
+            return OperationType.VALIDATION
+        
+        return OperationType.OTHER
+    
+    def _extract_inputs(self, api_call: Dict[str, Any]) -> List[str]:
+        """提取API调用的输入变量
+        
+        Args:
+            api_call: API调用信息
+            
+        Returns:
+            输入变量名列表
+        """
+        inputs = []
+        
+        # 从位置参数提取
+        for arg in api_call.get('args', []):
+            if isinstance(arg, str) and arg.isidentifier():
+                inputs.append(arg)
+        
+        # 从关键字参数提取
+        for value in api_call.get('kwargs', {}).values():
+            if isinstance(value, str) and value.isidentifier():
+                inputs.append(value)
+        
+        # 从调用链提取（如 df.fillna()，df是输入）
+        call_chain = api_call.get('call_chain', [])
+        if len(call_chain) > 1:
+            base_var = call_chain[0]
+            if base_var.isidentifier():
+                inputs.append(base_var)
+        
+        return list(set(inputs))  # 去重
+    
+    def _extract_outputs(self, api_call: Dict[str, Any]) -> List[str]:
+        """提取API调用的输出变量
+        
+        Args:
+            api_call: API调用信息
+            
+        Returns:
+            输出变量名列表
+        """
+        outputs = []
+        
+        # 如果有return_var，添加到输出
+        return_var = api_call.get('return_var')
+        if return_var:
+            outputs.append(return_var)
+        
+        return outputs
+    
+    def _extract_code_snippet(self, code: str, line_no: int, context: int = 0) -> str:
+        """提取代码片段
+        
+        Args:
+            code: 完整代码
+            line_no: 行号
+            context: 上下文行数
+            
+        Returns:
+            代码片段
+        """
+        lines = code.split('\n')
+        if line_no <= 0 or line_no > len(lines):
+            return ""
+        
+        start = max(0, line_no - 1 - context)
+        end = min(len(lines), line_no + context)
+        
+        return '\n'.join(lines[start:end])
     
     def parse_code(self, code: str) -> Optional[ast.Module]:
         """解析代码字符串为AST

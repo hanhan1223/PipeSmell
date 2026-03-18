@@ -46,7 +46,7 @@ Report Generator
 
 ```bash
 # 克隆仓库
-git clone https://github.com/your-repo/ccf-a-pipeline-smell-detection
+git clone https://github.com/hanhan1223/PipeSmell.git
 cd ccf-a-pipeline-smell-detection
 
 # 安装依赖

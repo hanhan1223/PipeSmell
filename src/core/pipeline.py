@@ -74,9 +74,14 @@ class PipelineGraph:
     使用有向图表示Pipeline中的节点和数据流关系。
     """
     
-    def __init__(self) -> None:
-        """初始化Pipeline图"""
+    def __init__(self, file_path: str = "") -> None:
+        """初始化Pipeline图
+        
+        Args:
+            file_path: 源文件路径
+        """
         self.graph = nx.DiGraph()
+        self.file_path = file_path
         self._logger = Logger.setup('pipeline_graph', 'logs/pipeline_graph.log')
     
     def add_node(self, node: PipelineNode) -> None:
@@ -201,6 +206,35 @@ class PipelineGraph:
         merge_points = [n for n, d in self.graph.in_degree() if d > 1]
         self._logger.debug(f"识别到 {len(merge_points)} 个汇合点: {merge_points}")
         return merge_points
+    
+    def get_nodes(self) -> List[PipelineNode]:
+        """获取所有节点
+        
+        Returns:
+            PipelineNode列表
+        """
+        nodes = []
+        for node_id in self.graph.nodes():
+            node = self.get_node_by_id(node_id)
+            if node:
+                nodes.append(node)
+        return nodes
+    
+    def get_num_edges(self) -> int:
+        """获取边的数量
+        
+        Returns:
+            边的数量
+        """
+        return self.graph.number_of_edges()
+    
+    def get_num_nodes(self) -> int:
+        """获取节点的数量
+        
+        Returns:
+            节点的数量
+        """
+        return self.graph.number_of_nodes()
 
 
 class PipelineExtractor:
@@ -236,7 +270,7 @@ class PipelineExtractor:
             self._logger.info(f"解析到 {len(ast_result.api_calls)} 个API调用")
             
             # 2. 创建PipelineGraph
-            pipeline_graph = PipelineGraph()
+            pipeline_graph = PipelineGraph(file_path=file_path)
             
             # 3. 添加节点
             for api_call in ast_result.api_calls:

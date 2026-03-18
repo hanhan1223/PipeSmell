@@ -40,19 +40,6 @@ class SmellInstance:
     suggestion: str  # 修复建议
 
 
-@dataclass
-class DetectionResult:
-    """检测结果数据类
-    
-    表示对单个Pipeline的检测结果，包含Pipeline标识、路径、统计信息和检测到的Smell列表。
-    """
-    pipeline_id: str  # Pipeline标识
-    file_path: str  # 文件路径
-    total_operations: int  # 总操作数
-    detected_smells: List[SmellInstance]  # 检测到的Smell列表
-    statistics: Dict[str, Any]  # 统计信息（各类别Smell数量）
-
-
 class SmellDetector(ABC):
     """Smell检测器抽象基类
     
@@ -304,10 +291,11 @@ class DetectorRegistry:
         runtime = (time.time() - start_time) * 1000  # 转换为毫秒
         
         # 构建Pipeline信息
+        nodes = pipeline.get_nodes()
         pipeline_info = {
             'file_path': pipeline.file_path,
-            'num_nodes': len(pipeline.get_nodes()),
-            'num_modules': len(set(node.module_type for node in pipeline.get_nodes())),
+            'num_nodes': len(nodes),
+            'num_modules': len(set(node.operation_type for node in nodes)),
             'num_edges': pipeline.get_num_edges()
         }
         
