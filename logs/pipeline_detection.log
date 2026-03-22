@@ -1,0 +1,4 @@
+2026-03-21 21:28:24 - pipeline_detection - INFO - Pipeline Smell Detection System启动
+2026-03-21 21:28:24 - pipeline_detection - INFO - 开始检测文件: example_pipeline.py
+2026-03-21 21:28:24 - pipeline_detection - INFO - 成功提取Pipeline: 35 个操作节点
+2026-03-21 21:28:24 - pipeline_detection - ERROR - 检测失败: Logger.info() missing 1 required positional argument: 'message'

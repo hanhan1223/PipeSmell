@@ -1,0 +1,23 @@
+# Pipeline Smell Detection Report
+
+## Pipeline Information
+
+- **file_path**: example_pipeline.py
+- **num_nodes**: 35
+- **num_modules**: 5
+- **num_edges**: 0
+
+## Detection Summary
+
+- **Total Smells**: 0
+- **Detection Runtime**: 23.37 ms
+
+### By Severity
+
+
+### By Category
+
+
+## Detected Smells
+
+✅ No pipeline smells detected!

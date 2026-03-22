@@ -1,0 +1,106 @@
+{
+  "description": "External-style benchmark: English-only / no smell-type markers in headers. Paths in annotations are relative to this directory.",
+  "annotations": [
+    {
+      "file": "ext_01_data_leakage_style.py",
+      "smells": [
+        {
+          "type": "DATA_LEAKAGE",
+          "line_start": 14,
+          "line_end": 14,
+          "description": "StandardScaler fit_transform on full X before train_test_split",
+          "severity": "CRITICAL"
+        }
+      ]
+    },
+    {
+      "file": "ext_02_missing_random_seed_style.py",
+      "smells": [
+        {
+          "type": "MISSING_RANDOM_SEED",
+          "line_start": 12,
+          "line_end": 12,
+          "description": "train_test_split without random_state",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "ext_03_clean_style.py",
+      "smells": [],
+      "note": "Expected no smells (holdout + metrics + reproducible seed)."
+    },
+    {
+      "file": "ext_04_missing_validation_style.py",
+      "smells": [
+        {
+          "type": "MISSING_VALIDATION",
+          "line_start": 12,
+          "line_end": 12,
+          "description": "Fit and evaluate on full dataset without split / CV",
+          "severity": "CRITICAL"
+        }
+      ]
+    },
+    {
+      "file": "ext_05_inefficient_loop_style.py",
+      "smells": [
+        {
+          "type": "INEFFICIENT_AGGREGATION",
+          "line_start": 12,
+          "line_end": 12,
+          "description": "Row-wise loop with iloc instead of vectorized aggregation",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "ext_06_repeated_scaler_style.py",
+      "smells": [
+        {
+          "type": "REPEATED_TRANSFORM",
+          "line_start": 17,
+          "line_end": 17,
+          "description": "StandardScaler then MinMaxScaler on same modeling path",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "ext_07_nondeterministic_style.py",
+      "smells": [
+        {
+          "type": "NON_DETERMINISTIC_ORDER",
+          "line_start": 7,
+          "line_end": 7,
+          "description": "list() over set literal — iteration order undefined",
+          "severity": "LOW"
+        }
+      ]
+    },
+    {
+      "file": "ext_08_module_order_style.py",
+      "smells": [
+        {
+          "type": "MODULE_ORDER_VIOLATION",
+          "line_start": 20,
+          "line_end": 20,
+          "description": "SelectKBest applied after scaling",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "ext_09_intermediate_csv_style.py",
+      "smells": [
+        {
+          "type": "UNNECESSARY_MATERIALIZATION",
+          "line_start": 7,
+          "line_end": 7,
+          "description": "Multiple intermediate CSV writes",
+          "severity": "LOW"
+        }
+      ]
+    }
+  ]
+}

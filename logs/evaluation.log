@@ -1,0 +1,121 @@
+2026-03-22 14:14:06 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 14:14:06 - Evaluator - INFO - 预测数量: 0, Ground Truth数量: 22
+2026-03-22 14:14:06 - Evaluator - INFO - 匹配完成: 0 个成功匹配
+2026-03-22 14:14:06 - Evaluator - INFO - 评估完成: P=0.000, R=0.000, F1=0.000
+2026-03-22 14:14:06 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 14:33:43 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 14:33:43 - Evaluator - INFO - 预测数量: 0, Ground Truth数量: 22
+2026-03-22 14:33:43 - Evaluator - INFO - 匹配完成: 0 个成功匹配
+2026-03-22 14:33:44 - Evaluator - INFO - 评估完成: P=0.000, R=0.000, F1=0.000
+2026-03-22 14:33:44 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 14:44:14 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 14:44:14 - Evaluator - INFO - 预测数量: 0, Ground Truth数量: 22
+2026-03-22 14:44:14 - Evaluator - INFO - 匹配完成: 0 个成功匹配
+2026-03-22 14:44:14 - Evaluator - INFO - 评估完成: P=0.000, R=0.000, F1=0.000
+2026-03-22 14:44:14 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 14:50:33 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 14:50:33 - Evaluator - INFO - 预测数量: 81, Ground Truth数量: 22
+2026-03-22 14:50:33 - Evaluator - INFO - 匹配完成: 2 个成功匹配
+2026-03-22 14:50:33 - Evaluator - INFO - 评估完成: P=0.025, R=0.091, F1=0.039
+2026-03-22 14:50:33 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 15:06:15 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 15:06:15 - Evaluator - INFO - 预测数量: 26, Ground Truth数量: 22
+2026-03-22 15:06:15 - Evaluator - INFO - 匹配完成: 20 个成功匹配
+2026-03-22 15:06:15 - Evaluator - INFO - 评估完成: P=0.769, R=0.909, F1=0.833
+2026-03-22 15:06:15 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 15:08:37 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 15:08:37 - Evaluator - INFO - 预测数量: 23, Ground Truth数量: 22
+2026-03-22 15:08:37 - Evaluator - INFO - 匹配完成: 22 个成功匹配
+2026-03-22 15:08:37 - Evaluator - INFO - 评估完成: P=0.957, R=1.000, F1=0.978
+2026-03-22 15:08:37 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 15:09:37 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 15:09:37 - Evaluator - INFO - 预测数量: 22, Ground Truth数量: 22
+2026-03-22 15:09:37 - Evaluator - INFO - 匹配完成: 22 个成功匹配
+2026-03-22 15:09:37 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 15:09:37 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 15:51:24 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 15:51:24 - Evaluator - INFO - 预测数量: 22, Ground Truth数量: 22
+2026-03-22 15:51:24 - Evaluator - INFO - 匹配完成: 22 个成功匹配
+2026-03-22 15:51:24 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 15:51:24 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 16:14:03 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 16:14:03 - Evaluator - INFO - 预测数量: 8, Ground Truth数量: 8
+2026-03-22 16:14:03 - Evaluator - INFO - 匹配完成: 8 个成功匹配
+2026-03-22 16:14:03 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 16:14:03 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1_external\Pipeline-aware
+2026-03-22 16:14:39 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 16:14:39 - Evaluator - INFO - 预测数量: 8, Ground Truth数量: 8
+2026-03-22 16:14:39 - Evaluator - INFO - 匹配完成: 8 个成功匹配
+2026-03-22 16:14:39 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 16:14:39 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1_external\Pipeline-aware
+2026-03-22 16:15:01 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 16:15:01 - Evaluator - INFO - 预测数量: 23, Ground Truth数量: 22
+2026-03-22 16:15:01 - Evaluator - INFO - 匹配完成: 22 个成功匹配
+2026-03-22 16:15:01 - Evaluator - INFO - 评估完成: P=0.957, R=1.000, F1=0.978
+2026-03-22 16:15:01 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 16:15:43 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 16:15:43 - Evaluator - INFO - 预测数量: 23, Ground Truth数量: 22
+2026-03-22 16:15:43 - Evaluator - INFO - 匹配完成: 22 个成功匹配
+2026-03-22 16:15:43 - Evaluator - INFO - 评估完成: P=0.957, R=1.000, F1=0.978
+2026-03-22 16:15:43 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 16:16:05 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 16:16:05 - Evaluator - INFO - 预测数量: 22, Ground Truth数量: 22
+2026-03-22 16:16:05 - Evaluator - INFO - 匹配完成: 22 个成功匹配
+2026-03-22 16:16:05 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 16:16:05 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 16:36:18 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 16:36:18 - Evaluator - INFO - 预测数量: 22, Ground Truth数量: 22
+2026-03-22 16:36:18 - Evaluator - INFO - 匹配完成: 22 个成功匹配
+2026-03-22 16:36:18 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 16:36:18 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 16:36:20 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 16:36:20 - Evaluator - INFO - 预测数量: 8, Ground Truth数量: 8
+2026-03-22 16:36:20 - Evaluator - INFO - 匹配完成: 8 个成功匹配
+2026-03-22 16:36:20 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 16:36:20 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1_external\Pipeline-aware
+2026-03-22 16:38:01 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 16:38:01 - Evaluator - INFO - 预测数量: 22, Ground Truth数量: 22
+2026-03-22 16:38:01 - Evaluator - INFO - 匹配完成: 22 个成功匹配
+2026-03-22 16:38:01 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 16:38:01 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 16:38:03 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 16:38:03 - Evaluator - INFO - 预测数量: 8, Ground Truth数量: 8
+2026-03-22 16:38:03 - Evaluator - INFO - 匹配完成: 8 个成功匹配
+2026-03-22 16:38:03 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 16:38:03 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1_external\Pipeline-aware
+2026-03-22 16:39:51 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 16:39:51 - Evaluator - INFO - 预测数量: 22, Ground Truth数量: 22
+2026-03-22 16:39:51 - Evaluator - INFO - 匹配完成: 22 个成功匹配
+2026-03-22 16:39:51 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 16:39:51 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 16:39:53 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 16:39:53 - Evaluator - INFO - 预测数量: 8, Ground Truth数量: 8
+2026-03-22 16:39:53 - Evaluator - INFO - 匹配完成: 8 个成功匹配
+2026-03-22 16:39:53 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 16:39:53 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1_external\Pipeline-aware
+2026-03-22 16:39:58 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 16:39:58 - Evaluator - INFO - 预测数量: 22, Ground Truth数量: 22
+2026-03-22 16:39:58 - Evaluator - INFO - 匹配完成: 22 个成功匹配
+2026-03-22 16:39:58 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 16:39:58 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq2\Pipeline-aware
+2026-03-22 16:39:58 - Evaluator - INFO - 开始评估方法: Baseline-Keyword
+2026-03-22 16:39:58 - Evaluator - INFO - 预测数量: 37, Ground Truth数量: 22
+2026-03-22 16:39:58 - Evaluator - INFO - 匹配完成: 4 个成功匹配
+2026-03-22 16:39:58 - Evaluator - INFO - 评估完成: P=0.108, R=0.182, F1=0.136
+2026-03-22 16:39:58 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq2\Baseline-Keyword
+2026-03-22 16:39:58 - Evaluator - INFO - 开始评估方法: Baseline-Heuristic
+2026-03-22 16:39:58 - Evaluator - INFO - 预测数量: 29, Ground Truth数量: 22
+2026-03-22 16:39:58 - Evaluator - INFO - 匹配完成: 3 个成功匹配
+2026-03-22 16:39:58 - Evaluator - INFO - 评估完成: P=0.107, R=0.136, F1=0.120
+2026-03-22 16:39:58 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq2\Baseline-Heuristic
+2026-03-22 16:39:58 - Evaluator - INFO - 开始评估方法: Baseline-SonarQube
+2026-03-22 16:39:58 - Evaluator - INFO - 预测数量: 58, Ground Truth数量: 22
+2026-03-22 16:39:58 - Evaluator - INFO - 匹配完成: 1 个成功匹配
+2026-03-22 16:39:58 - Evaluator - INFO - 评估完成: P=0.017, R=0.045, F1=0.025
+2026-03-22 16:39:58 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq2\Baseline-SonarQube
+2026-03-22 16:39:58 - Evaluator - INFO - 开始评估方法: Baseline-PMD
+2026-03-22 16:39:58 - Evaluator - INFO - 预测数量: 78, Ground Truth数量: 22
+2026-03-22 16:39:58 - Evaluator - INFO - 匹配完成: 2 个成功匹配
+2026-03-22 16:39:58 - Evaluator - INFO - 评估完成: P=0.026, R=0.091, F1=0.040
+2026-03-22 16:39:58 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq2\Baseline-PMD
+2026-03-22 16:39:58 - Evaluator - INFO - 方法比较结果已保存到: experiments\results\rq2\method_comparison.json
