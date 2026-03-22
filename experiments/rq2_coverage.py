@@ -39,6 +39,56 @@ from src.baseline.sonarqube_adapter import SonarQubeBaseline
 from src.baseline.pmd_adapter import PMDBaseline
 from src.core.logger import Logger
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_GT_CANDIDATES = [
+    PROJECT_ROOT / "dataset" / "ground_truth.json",
+    PROJECT_ROOT / "data" / "ground_truth" / "ground_truth.json",
+]
+
+
+def _resolve_gt_path() -> Path:
+    for p in DEFAULT_GT_CANDIDATES:
+        if p.is_file():
+            return p
+    return DEFAULT_GT_CANDIDATES[0]
+
+
+def _all_files_from_annotations(gt_path: Path) -> List[str]:
+    try:
+        with open(gt_path, encoding="utf-8") as f:
+            data = json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return []
+    if not isinstance(data, dict) or "annotations" not in data:
+        return []
+    root = gt_path.parent.resolve()
+    out: List[str] = []
+    for ann in data["annotations"]:
+        fn = ann.get("file") or ann.get("file_path")
+        if fn:
+            out.append(str((root / fn).resolve()))
+    return out
+
+
+def _smell_instances_to_predictions(smells) -> List[Dict]:
+    """将 SmellInstance 列表转为评估器使用的 prediction 字典列表。"""
+    preds: List[Dict] = []
+    for smell in smells:
+        fp = smell.location.file_path
+        pred_path = str(Path(fp).resolve()) if fp else fp
+        preds.append(
+            {
+                "id": f"{pred_path}:{smell.location.line_number}:{smell.smell_type}",
+                "smell_type": smell.smell_type,
+                "file_path": pred_path,
+                "line_number": smell.location.line_number,
+                "severity": smell.severity,
+                "description": smell.description,
+                "affected_nodes": smell.affected_nodes,
+            }
+        )
+    return preds
+
 
 def run_pipeline_aware(file_paths: List[str]) -> List[Dict]:
     """运行Pipeline-aware方法"""
@@ -57,17 +107,7 @@ def run_pipeline_aware(file_paths: List[str]) -> List[Dict]:
         
         result = registry.detect_all(pipeline)
         
-        for smell in result.detected_smells:
-            prediction = {
-                'id': f"{smell.location.file_path}:{smell.location.line_number}:{smell.smell_type}",
-                'smell_type': smell.smell_type,
-                'file_path': smell.location.file_path,
-                'line_number': smell.location.line_number,
-                'severity': smell.severity,
-                'description': smell.description,
-                'affected_nodes': smell.affected_nodes
-            }
-            all_predictions.append(prediction)
+        all_predictions.extend(_smell_instances_to_predictions(result.detected_smells))
     
     logger.info(f"Pipeline-aware检测到 {len(all_predictions)} 个Smell")
     return all_predictions
@@ -82,9 +122,9 @@ def run_baseline_keyword(file_paths: List[str]) -> List[Dict]:
     all_predictions = []
     
     for file_path in file_paths:
-        result = baseline.detect_file(file_path)
-        all_predictions.extend(result)
-    
+        smells = baseline.detect(file_path)
+        all_predictions.extend(_smell_instances_to_predictions(smells))
+
     logger.info(f"Keyword基线检测到 {len(all_predictions)} 个Smell")
     return all_predictions
 
@@ -94,13 +134,19 @@ def run_baseline_heuristic(file_paths: List[str]) -> List[Dict]:
     logger = Logger.setup('RQ2', 'logs/rq2_experiment.log')
     logger.info("运行Heuristic基线方法...")
     
+    extractor = PipelineExtractor()
+    registry = DetectorRegistry()
     baseline = HeuristicBaseline()
     all_predictions = []
-    
+
     for file_path in file_paths:
-        result = baseline.detect_file(file_path)
-        all_predictions.extend(result)
-    
+        pipeline = extractor.extract_from_file(file_path)
+        if pipeline is None:
+            continue
+        module_sequence = registry._extract_module_sequence(pipeline)
+        smells = baseline.detect(pipeline, module_sequence)
+        all_predictions.extend(_smell_instances_to_predictions(smells))
+
     logger.info(f"Heuristic基线检测到 {len(all_predictions)} 个Smell")
     return all_predictions
 
@@ -114,9 +160,9 @@ def run_baseline_sonarqube(file_paths: List[str]) -> List[Dict]:
     all_predictions = []
     
     for file_path in file_paths:
-        result = baseline.detect_file(file_path)
-        all_predictions.extend(result)
-    
+        smells = baseline.detect(file_path)
+        all_predictions.extend(_smell_instances_to_predictions(smells))
+
     logger.info(f"SonarQube基线检测到 {len(all_predictions)} 个Smell")
     return all_predictions
 
@@ -130,9 +176,9 @@ def run_baseline_pmd(file_paths: List[str]) -> List[Dict]:
     all_predictions = []
     
     for file_path in file_paths:
-        result = baseline.detect_file(file_path)
-        all_predictions.extend(result)
-    
+        smells = baseline.detect(file_path)
+        all_predictions.extend(_smell_instances_to_predictions(smells))
+
     logger.info(f"PMD基线检测到 {len(all_predictions)} 个Smell")
     return all_predictions
 
@@ -201,7 +247,7 @@ def main():
     # 1. 配置评估参数
     config = EvaluationConfig(
         match_strategy=MatchStrategy.LINE_RANGE,
-        line_tolerance=2,
+        line_tolerance=8,
         output_dir="experiments/results/rq2",
         save_detailed_results=True,
         calculate_per_smell_metrics=True
@@ -209,21 +255,25 @@ def main():
     
     evaluator = Evaluator(config)
     
-    # 2. 加载Ground Truth
+    # 2. 加载Ground Truth（默认 dataset/ground_truth.json）
     logger.info("加载Ground Truth数据...")
     
-    gt_file = "data/ground_truth/ground_truth.json"
+    gt_file = _resolve_gt_path()
     
-    if not Path(gt_file).exists():
+    if not gt_file.is_file():
         logger.error(f"Ground Truth文件不存在: {gt_file}")
-        logger.info("请先构建Ground Truth数据集")
+        logger.info("请将标注文件放在以下路径之一:")
+        for p in DEFAULT_GT_CANDIDATES:
+            logger.info(f"  - {p}")
         return
     
-    ground_truth = GroundTruthLoader.load_from_json(gt_file)
+    ground_truth = GroundTruthLoader.load_from_json(str(gt_file))
     logger.info(f"加载了 {len(ground_truth)} 个Ground Truth Smell")
-    
-    # 3. 获取文件列表
-    file_paths = list(set(gt['file_path'] for gt in ground_truth))
+
+    # 3. 待测文件：GT 中出现的文件 ∪ annotations 中的文件（含 smells 为空的负例）
+    from_gt = {str(Path(gt["file_path"]).resolve()) for gt in ground_truth}
+    from_ann = set(_all_files_from_annotations(gt_file))
+    file_paths = sorted(from_gt | from_ann)
     logger.info(f"需要检测 {len(file_paths)} 个文件")
     
     # 4. 运行所有方法

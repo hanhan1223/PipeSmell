@@ -10,12 +10,28 @@ from typing import Any, Dict, List, Optional, Set
 from src.core.logger import Logger
 
 
-# 关键API常量，用于识别数据管道中的常见操作
+# 关键API常量，用于识别数据管道中的常见操作（需覆盖 dataset 示例中的调用）
 KEY_APIS = {
-    'pandas': ['read_csv', 'fillna', 'dropna', 'drop_duplicates', 'merge', 'groupby'],
-    'sklearn.preprocessing': ['StandardScaler', 'MinMaxScaler'],
-    'sklearn.model_selection': ['train_test_split'],
-    'sklearn': ['fit', 'transform', 'predict', 'score']
+    'pandas': [
+        'read_csv', 'read_excel', 'read_json', 'to_csv', 'to_excel', 'to_parquet',
+        'fillna', 'dropna', 'drop_duplicates', 'merge', 'groupby', 'iterrows',
+        'copy', 'drop', 'head', 'describe', 'info', 'value_counts',
+    ],
+    'numpy': ['mean', 'random', 'seed'],
+    'sklearn.preprocessing': ['StandardScaler', 'MinMaxScaler', 'RobustScaler', 'Normalizer'],
+    'sklearn.model_selection': [
+        'train_test_split', 'GridSearchCV', 'RandomizedSearchCV',
+        'cross_val_score', 'KFold', 'StratifiedKFold', 'cross_validate',
+    ],
+    'sklearn.feature_selection': ['SelectKBest', 'SelectFromModel', 'RFE', 'VarianceThreshold'],
+    'sklearn.metrics': [
+        'accuracy_score', 'f1_score', 'classification_report',
+        'precision_score', 'recall_score',
+    ],
+    'sklearn': [
+        'fit', 'transform', 'fit_transform', 'predict', 'predict_proba',
+        'score', 'fit_predict',
+    ],
 }
 
 
@@ -65,7 +81,9 @@ class ASTParser:
                 call['location'] = f"{file_path}:{call.get('line_no', 0)}"
                 call['attributes'] = {
                     'args': call.get('args', []),
-                    'kwargs': call.get('kwargs', {})
+                    'kwargs': call.get('kwargs', {}),
+                    'library': call.get('library', ''),
+                    'call_chain': call.get('call_chain', []),
                 }
             
             return ASTResult(ast_tree, api_calls)
@@ -97,11 +115,15 @@ class ASTParser:
             return OperationType.DATA_LOADING
         
         # 数据清洗
-        if api_name in ['fillna', 'dropna', 'drop_duplicates', 'replace']:
+        if api_name in ['fillna', 'dropna', 'drop_duplicates', 'replace', 'drop', 'copy']:
             return OperationType.DATA_CLEANING
         
         # 特征工程
-        if api_name in ['standardscaler', 'minmaxscaler', 'onehotencoder', 'labelencoder']:
+        if api_name in [
+            'standardscaler', 'minmaxscaler', 'robustscaler', 'normalizer',
+            'onehotencoder', 'labelencoder', 'selectkbest', 'selectfrommodel',
+            'rfe', 'variancethreshold',
+        ]:
             return OperationType.FEATURE_ENGINEERING
         
         # 训练测试划分
@@ -109,11 +131,15 @@ class ASTParser:
             return OperationType.TRAIN_TEST_SPLIT
         
         # 模型操作
-        if api_name in ['fit', 'predict', 'score', 'transform']:
+        if api_name in ['fit', 'predict', 'score', 'transform', 'fit_transform', 'fit_predict']:
             return OperationType.MODEL_OPERATION
         
-        # 验证
-        if api_name in ['cross_val_score', 'kfold', 'stratifiedkfold']:
+        # 验证 / 指标
+        if api_name in [
+            'cross_val_score', 'kfold', 'stratifiedkfold', 'cross_validate',
+            'accuracy_score', 'f1_score', 'classification_report',
+            'precision_score', 'recall_score',
+        ]:
             return OperationType.VALIDATION
         
         return OperationType.OTHER
@@ -350,21 +376,33 @@ class APIExtractor:
         for library, apis in self._key_apis.items():
             for api in apis:
                 if func_name == api:
-                    # 检查是否是方法调用（属性访问）
                     if len(call_chain) > 1:
-                        # 方法调用，如 df.fillna()
                         return {
                             'api_name': api,
                             'library': library,
                             'call_chain': call_chain
                         }
                     else:
-                        # 直接函数调用，如 pd.read_csv()
                         return {
                             'api_name': api,
                             'library': library,
                             'call_chain': call_chain
                         }
+        
+        if func_name.endswith(
+            ('Classifier', 'Regressor', 'Regression', 'Clustering', 'SearchCV', 'Encoder', 'NB', 'SVC')
+        ):
+            return {
+                'api_name': func_name,
+                'library': 'sklearn',
+                'call_chain': call_chain
+            }
+        if func_name in ('Pipeline', 'ColumnTransformer'):
+            return {
+                'api_name': func_name,
+                'library': 'sklearn',
+                'call_chain': call_chain
+            }
         
         return None
     

@@ -179,8 +179,8 @@ UNNECESSARY_MATERIALIZATION = PipelineSmell(
     detection_pattern="在不需要复用中间结果的情况下执行to_csv()、to_parquet()、to_sql()等持久化操作"
 )
 
-LARGE_DATAFRAME_OPERATION = PipelineSmell(
-    name="LARGE_DATAFRAME_OPERATION",
+LARGE_DATA_FRAME_OPERATION = PipelineSmell(
+    name="LARGE_DATA_FRAME_OPERATION",
     category=SmellCategory.PERFORMANCE,
     description="大DataFrame低效操作：对大型DataFrame执行需要全表扫描或内存复制的高开销操作。"
                 "检测条件：对大DataFrame（行数>100万）执行多次copy()、apply()、iterrows()等操作，"
@@ -190,6 +190,7 @@ LARGE_DATAFRAME_OPERATION = PipelineSmell(
     detection_pattern="对大DataFrame（行数>100万）执行多次copy()、apply()、iterrows()等高开销操作"
 )
 
+LARGE_DATAFRAME_OPERATION = LARGE_DATA_FRAME_OPERATION
 
 # ========== 结构类Smells (3种) ==========
 
@@ -287,7 +288,7 @@ def get_all_smells() -> List[PipelineSmell]:
         # 性能类
         INEFFICIENT_AGGREGATION,
         UNNECESSARY_MATERIALIZATION,
-        LARGE_DATAFRAME_OPERATION,
+        LARGE_DATA_FRAME_OPERATION,
         # 结构类
         CIRCULAR_DEPENDENCY,
         IMPROPER_MODULE_COHESION,

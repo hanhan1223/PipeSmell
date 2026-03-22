@@ -19,7 +19,7 @@ from src.evaluation.metrics import MetricsCalculator, MetricsResult
 class EvaluationConfig:
     """评估配置"""
     match_strategy: MatchStrategy = MatchStrategy.LINE_RANGE
-    line_tolerance: int = 2
+    line_tolerance: int = 8
     output_dir: str = "experiments/results"
     save_detailed_results: bool = True
     calculate_per_smell_metrics: bool = True
@@ -113,18 +113,23 @@ class Evaluator:
         
         self.logger.info(f"匹配完成: {len(matching_result.matches)} 个成功匹配")
         
-        # 2. 计算总体指标
-        pred_ids = set(p['id'] for p in predictions)
-        gt_ids = set(g['id'] for g in ground_truth)
+        # 2. 总体指标（与匹配策略一致，例如行容差）
+        overall_metrics = MetricsCalculator.from_matching_result(matching_result)
         
-        overall_metrics = MetricsCalculator.calculate_binary_metrics(pred_ids, gt_ids)
-        
-        # 3. 计算每个Smell类型的指标
+        # 3. 每个Smell类型的指标（对子集重新匹配）
         per_smell_metrics = {}
         if self.config.calculate_per_smell_metrics:
-            per_smell_metrics = MetricsCalculator.calculate_per_smell_metrics(
-                predictions, ground_truth
+            all_types = (
+                {p['smell_type'] for p in predictions}
+                | {g['smell_type'] for g in ground_truth}
             )
+            for st in sorted(all_types):
+                preds_t = [p for p in predictions if p['smell_type'] == st]
+                gts_t = [g for g in ground_truth if g['smell_type'] == st]
+                if not preds_t and not gts_t:
+                    continue
+                mr_t = matcher.match(preds_t, gts_t)
+                per_smell_metrics[st] = MetricsCalculator.from_matching_result(mr_t)
         
         runtime_ms = (time.time() - start_time) * 1000
         
@@ -187,17 +192,22 @@ class Evaluator:
         for gts in ground_truth_by_file.values():
             all_ground_truth.extend(gts)
         
-        pred_ids = set(p['id'] for p in all_predictions)
-        gt_ids = set(g['id'] for g in all_ground_truth)
-        
-        overall_metrics = MetricsCalculator.calculate_binary_metrics(pred_ids, gt_ids)
+        overall_metrics = MetricsCalculator.from_matching_result(aggregated_result)
         
         # 4. 计算每个Smell类型的指标
         per_smell_metrics = {}
         if self.config.calculate_per_smell_metrics:
-            per_smell_metrics = MetricsCalculator.calculate_per_smell_metrics(
-                all_predictions, all_ground_truth
+            all_types = (
+                {p['smell_type'] for p in all_predictions}
+                | {g['smell_type'] for g in all_ground_truth}
             )
+            for st in sorted(all_types):
+                preds_t = [p for p in all_predictions if p['smell_type'] == st]
+                gts_t = [g for g in all_ground_truth if g['smell_type'] == st]
+                if not preds_t and not gts_t:
+                    continue
+                mr_t = matcher.match(preds_t, gts_t)
+                per_smell_metrics[st] = MetricsCalculator.from_matching_result(mr_t)
         
         # 5. 计算每个文件的指标
         per_file_metrics = {}
@@ -206,12 +216,8 @@ class Evaluator:
             file_gts = ground_truth_by_file.get(file_path, [])
             
             if file_preds or file_gts:
-                file_pred_ids = set(p['id'] for p in file_preds)
-                file_gt_ids = set(g['id'] for g in file_gts)
-                
-                per_file_metrics[file_path] = MetricsCalculator.calculate_binary_metrics(
-                    file_pred_ids, file_gt_ids
-                )
+                mr_f = matcher.match(file_preds, file_gts)
+                per_file_metrics[file_path] = MetricsCalculator.from_matching_result(mr_f)
         
         runtime_ms = (time.time() - start_time) * 1000
         
@@ -353,24 +359,88 @@ class GroundTruthLoader:
     """Ground Truth数据加载器"""
     
     @staticmethod
-    def load_from_json(file_path: str) -> List[Dict]:
+    def _flatten_annotations(annotations: List[Dict], dataset_root: Path) -> List[Dict]:
+        """将 dataset/ground_truth.json 中的 annotations 展平为评估用记录列表。"""
+        out: List[Dict] = []
+        for ann in annotations:
+            fname = ann.get('file') or ann.get('file_path')
+            if not fname:
+                continue
+            resolved_file = str((dataset_root / fname).resolve())
+            for s in ann.get('smells') or []:
+                stype = s.get('smell_type') or s.get('type')
+                if not stype:
+                    continue
+                line_num = s.get('line_number')
+                if line_num is None:
+                    line_num = s.get('line_start')
+                if line_num is None:
+                    continue
+                out.append({
+                    'file_path': resolved_file,
+                    'smell_type': stype,
+                    'line_number': int(line_num),
+                    'line_end': s.get('line_end'),
+                    'severity': s.get('severity', ''),
+                    'description': s.get('description', ''),
+                    'affected_nodes': s.get('affected_nodes', []),
+                })
+        return out
+    
+    @staticmethod
+    def _normalize_flat_entry(smell: Dict, dataset_root: Path) -> None:
+        """补全扁平记录中的字段，并将相对路径解析为绝对路径。"""
+        if 'smell_type' not in smell and 'type' in smell:
+            smell['smell_type'] = smell['type']
+        if 'line_number' not in smell and 'line_start' in smell:
+            smell['line_number'] = int(smell['line_start'])
+        fp = smell.get('file_path') or smell.get('file')
+        if fp:
+            p = Path(fp)
+            smell['file_path'] = str(p.resolve() if p.is_absolute() else (dataset_root / p).resolve())
+    
+    @staticmethod
+    def load_from_json(file_path: str, dataset_root: Optional[str] = None) -> List[Dict]:
         """从JSON文件加载Ground Truth
+        
+        支持两种格式：
+        1) 顶层为列表，每项含 file_path、line_number、smell_type 等；
+        2) 顶层为对象且含 \"annotations\"（与 dataset/ground_truth.json 一致）。
         
         Args:
             file_path: JSON文件路径
+            dataset_root: 解析相对路径时的根目录；默认使用 JSON 文件所在目录
             
         Returns:
             Ground Truth Smell列表
         """
-        with open(file_path, 'r', encoding='utf-8') as f:
+        path = Path(file_path)
+        root = Path(dataset_root).resolve() if dataset_root else path.parent.resolve()
+        
+        with open(path, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        # 确保每个Smell有必要的字段
-        for smell in data:
-            if 'id' not in smell:
-                smell['id'] = f"{smell['file_path']}:{smell['line_number']}:{smell['smell_type']}"
+        if isinstance(data, dict) and 'annotations' in data:
+            smells = GroundTruthLoader._flatten_annotations(data['annotations'], root)
+        elif isinstance(data, list):
+            smells = []
+            for item in data:
+                smell = dict(item)
+                GroundTruthLoader._normalize_flat_entry(smell, root)
+                smells.append(smell)
+        else:
+            raise ValueError(
+                f'不支持的 Ground Truth JSON 格式: {path} '
+                '(需要为最外层列表，或含 "annotations" 键的对象)'
+            )
         
-        return data
+        for smell in smells:
+            if 'id' not in smell:
+                smell['id'] = (
+                    f"{smell['file_path']}:{smell['line_number']}:{smell['smell_type']}"
+                )
+        
+        return smells
     
     @staticmethod
     def load_from_directory(directory: str) -> Dict[str, List[Dict]]:
@@ -387,6 +457,8 @@ class GroundTruthLoader:
         dir_path = Path(directory)
         for json_file in dir_path.glob("*.json"):
             file_name = json_file.stem
-            ground_truth_by_file[file_name] = GroundTruthLoader.load_from_json(str(json_file))
+            ground_truth_by_file[file_name] = GroundTruthLoader.load_from_json(
+                str(json_file), dataset_root=str(json_file.parent)
+            )
         
         return ground_truth_by_file

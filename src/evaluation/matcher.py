@@ -4,9 +4,32 @@ Ground Truth匹配模块
 提供预测结果与Ground Truth的匹配算法，支持精确匹配和模糊匹配。
 """
 
+import os
 from dataclasses import dataclass
-from typing import Dict, List, Set, Tuple, Optional
 from enum import Enum
+from pathlib import Path
+from typing import Dict, List, Optional, Set, Tuple
+
+
+def _canonical_file_path(file_path: str) -> str:
+    """将路径规范为绝对路径字符串，便于跨平台一致比较。"""
+    if not file_path:
+        return ''
+    p = Path(file_path).expanduser()
+    try:
+        return str(p.resolve())
+    except OSError:
+        return str(p)
+
+
+def _paths_equivalent(a: str, b: str) -> bool:
+    """判断两处路径是否指向同一文件（兼容 Windows 大小写/分隔符差异）。"""
+    if not a or not b:
+        return a == b
+    ca, cb = _canonical_file_path(a), _canonical_file_path(b)
+    if ca == cb:
+        return True
+    return os.path.normcase(ca) == os.path.normcase(cb)
 
 
 class MatchStrategy(Enum):
@@ -238,10 +261,10 @@ class GroundTruthMatcher:
                     continue
                 
                 # 检查文件路径和Smell类型
-                if (pred['file_path'] != gt['file_path'] or
-                    pred['smell_type'] != gt['smell_type']):
+                if (not _paths_equivalent(pred['file_path'], gt['file_path']) or
+                        pred['smell_type'] != gt['smell_type']):
                     continue
-                
+
                 gt_nodes = set(gt.get('affected_nodes', []))
                 
                 # 计算Jaccard相似度
@@ -289,9 +312,9 @@ class GroundTruthMatcher:
             用于精确匹配的元组键
         """
         return (
-            smell['file_path'],
+            _canonical_file_path(smell['file_path']),
             smell['line_number'],
-            smell['smell_type']
+            smell['smell_type'],
         )
 
 

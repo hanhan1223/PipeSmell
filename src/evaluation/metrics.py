@@ -10,6 +10,8 @@ from typing import Dict, List, Set, Tuple
 
 import numpy as np
 
+from src.evaluation.matcher import MatchingResult
+
 
 @dataclass
 class ConfusionMatrix:
@@ -154,6 +156,31 @@ class MetricsCalculator:
             confusion_matrix=cm,
             total_predictions=len(predictions),
             total_ground_truth=len(ground_truth),
+            true_positives_count=tp,
+            false_positives_count=fp,
+            false_negatives_count=fn
+        )
+    
+    @staticmethod
+    def from_matching_result(matching_result: MatchingResult) -> MetricsResult:
+        """根据匹配结果计算 Precision / Recall / F1（支持行容差等模糊匹配）。"""
+        tp = len(matching_result.matches)
+        fp = len(matching_result.unmatched_predictions)
+        fn = len(matching_result.unmatched_ground_truth)
+        cm = ConfusionMatrix(
+            true_positives=tp,
+            false_positives=fp,
+            true_negatives=0,
+            false_negatives=fn
+        )
+        return MetricsResult(
+            precision=cm.precision(),
+            recall=cm.recall(),
+            f1_score=cm.f1_score(),
+            accuracy=cm.accuracy(),
+            confusion_matrix=cm,
+            total_predictions=tp + fp,
+            total_ground_truth=tp + fn,
             true_positives_count=tp,
             false_positives_count=fp,
             false_negatives_count=fn

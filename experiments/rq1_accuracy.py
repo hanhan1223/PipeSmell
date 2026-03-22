@@ -10,9 +10,11 @@ RQ1实验：检测准确性评估
 4. 生成详细的评估报告
 """
 
+import argparse
 import json
 import sys
 from pathlib import Path
+from typing import List
 
 # 添加项目根目录到路径
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -26,6 +28,37 @@ from src.evaluation import (
 from src.smells.detector import DetectorRegistry
 from src.core.pipeline import PipelineExtractor
 from src.core.logger import Logger
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_GT_CANDIDATES = [
+    PROJECT_ROOT / "dataset" / "ground_truth.json",
+    PROJECT_ROOT / "data" / "ground_truth" / "ground_truth.json",
+]
+
+
+def _resolve_gt_path() -> Path:
+    for p in DEFAULT_GT_CANDIDATES:
+        if p.is_file():
+            return p
+    return DEFAULT_GT_CANDIDATES[0]
+
+
+def _all_files_from_annotations(gt_path: Path) -> List[str]:
+    """列出 JSON 中 annotations 里出现的所有 file（含 smells 为空的负例样本）。"""
+    try:
+        with open(gt_path, encoding="utf-8") as f:
+            data = json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return []
+    if not isinstance(data, dict) or "annotations" not in data:
+        return []
+    root = gt_path.parent.resolve()
+    out: List[str] = []
+    for ann in data["annotations"]:
+        fn = ann.get("file") or ann.get("file_path")
+        if fn:
+            out.append(str((root / fn).resolve()))
+    return out
 
 
 def run_pipeline_aware_detection(file_paths: list) -> list:
@@ -46,10 +79,11 @@ def run_pipeline_aware_detection(file_paths: list) -> list:
     all_predictions = []
     
     for file_path in file_paths:
-        logger.info(f"检测文件: {file_path}")
-        
+        resolved_fp = str(Path(file_path).resolve())
+        logger.info(f"检测文件: {resolved_fp}")
+
         # 提取Pipeline
-        pipeline = extractor.extract_from_file(file_path)
+        pipeline = extractor.extract_from_file(resolved_fp)
         
         if pipeline is None:
             logger.warning(f"无法提取Pipeline: {file_path}")
@@ -60,10 +94,11 @@ def run_pipeline_aware_detection(file_paths: list) -> list:
         
         # 转换为标准格式
         for smell in result.detected_smells:
+            pred_path = str(Path(smell.location.file_path or resolved_fp).resolve())
             prediction = {
-                'id': f"{smell.location.file_path}:{smell.location.line_number}:{smell.smell_type}",
+                'id': f"{pred_path}:{smell.location.line_number}:{smell.smell_type}",
                 'smell_type': smell.smell_type,
-                'file_path': smell.location.file_path,
+                'file_path': pred_path,
                 'line_number': smell.location.line_number,
                 'severity': smell.severity,
                 'description': smell.description,
@@ -80,33 +115,50 @@ def run_pipeline_aware_detection(file_paths: list) -> list:
 
 def main():
     """RQ1实验主函数"""
-    
+    parser = argparse.ArgumentParser(description="RQ1：在 Ground Truth 上评估 Pipeline-aware 检测")
+    parser.add_argument(
+        "--gt",
+        type=str,
+        default=None,
+        help="ground_truth.json 路径（默认：dataset/ground_truth.json 或 data/ground_truth/...）",
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=str,
+        default=None,
+        help="结果输出目录（默认：experiments/results/rq1）",
+    )
+    args = parser.parse_args()
+
     logger = Logger.setup('RQ1', 'logs/rq1_experiment.log')
     logger.info("=" * 80)
     logger.info("开始RQ1实验：检测准确性评估")
     logger.info("=" * 80)
-    
+
+    out_dir = args.output_dir or "experiments/results/rq1"
+
     # 1. 配置评估参数
     config = EvaluationConfig(
         match_strategy=MatchStrategy.LINE_RANGE,
-        line_tolerance=2,
-        output_dir="experiments/results/rq1",
+        line_tolerance=8,
+        output_dir=out_dir,
         save_detailed_results=True,
         calculate_per_smell_metrics=True
     )
     
     evaluator = Evaluator(config)
     
-    # 2. 加载Ground Truth
+    # 2. 加载Ground Truth（默认 dataset/ground_truth.json）
     logger.info("加载Ground Truth数据...")
     
-    # TODO: 替换为实际的Ground Truth文件路径
-    gt_file = "data/ground_truth/ground_truth.json"
+    gt_file = Path(args.gt).resolve() if args.gt else _resolve_gt_path()
     
-    if not Path(gt_file).exists():
+    if not gt_file.is_file():
         logger.error(f"Ground Truth文件不存在: {gt_file}")
-        logger.info("请先构建Ground Truth数据集")
-        logger.info("示例Ground Truth格式:")
+        logger.info("请将标注文件放在以下路径之一:")
+        for p in DEFAULT_GT_CANDIDATES:
+            logger.info(f"  - {p}")
+        logger.info("示例扁平列表格式（也可使用 dataset 中带 annotations 的 JSON）:")
         
         example_gt = [
             {
@@ -123,11 +175,13 @@ def main():
         print(json.dumps(example_gt, indent=2, ensure_ascii=False))
         return
     
-    ground_truth = GroundTruthLoader.load_from_json(gt_file)
+    ground_truth = GroundTruthLoader.load_from_json(str(gt_file))
     logger.info(f"加载了 {len(ground_truth)} 个Ground Truth Smell")
-    
-    # 3. 获取要检测的文件列表
-    file_paths = list(set(gt['file_path'] for gt in ground_truth))
+
+    # 3. 待测文件 = 有标注条目的文件 ∪ annotations 中声明的文件（含负例空 smells）
+    from_gt = {str(Path(gt["file_path"]).resolve()) for gt in ground_truth}
+    from_ann = set(_all_files_from_annotations(gt_file))
+    file_paths = sorted(from_gt | from_ann)
     logger.info(f"需要检测 {len(file_paths)} 个文件")
     
     # 4. 运行Pipeline-aware检测
