@@ -2,10 +2,10 @@
   "dataset_info": {
     "name": "Pipeline Smell Detection Dataset",
     "version": "1.0.0",
-    "description": "包含20个Python机器学习Pipeline代码文件，涵盖全部18种Pipeline Smell类型",
-    "total_files": 20,
-    "annotated_files": 19,
-    "clean_files": 1,
+    "description": "包含40个Python机器学习Pipeline代码文件，涵盖全部18种Pipeline Smell类型（含变体B）",
+    "total_files": 40,
+    "annotated_files": 38,
+    "clean_files": 2,
     "created_date": "2026-03-20",
     "annotator": "AI Assistant"
   },
@@ -18,21 +18,34 @@
           "name": "数据泄露",
           "severity": "CRITICAL",
           "description": "在train_test_split之前对整个数据集执行全局统计操作或标准化",
-          "files": ["example_01_data_leakage.py", "example_20_multiple_smells.py"]
+          "files": [
+            "example_01_data_leakage.py",
+            "example_20_multiple_smells.py",
+            "example_21_data_leakage_b.py",
+            "example_40_multiple_smells_b.py"
+          ]
         },
         {
           "id": "MISSING_EVALUATION",
           "name": "缺少模型评估",
           "severity": "HIGH",
           "description": "Pipeline中存在模型训练操作，但缺少模型评估操作",
-          "files": ["example_05_missing_evaluation.py", "example_20_multiple_smells.py"]
+          "files": [
+            "example_05_missing_evaluation.py",
+            "example_20_multiple_smells.py",
+            "example_25_missing_evaluation_b.py",
+            "example_40_multiple_smells_b.py"
+          ]
         },
         {
           "id": "MODULE_ORDER_VIOLATION",
           "name": "模块顺序违反",
           "severity": "MEDIUM",
           "description": "模块顺序不符合预期（如特征选择在标准化之后）",
-          "files": ["example_12_module_order_violation.py"]
+          "files": [
+            "example_12_module_order_violation.py",
+            "example_32_module_order_violation_b.py"
+          ]
         }
       ]
     },
@@ -44,21 +57,30 @@
           "name": "重复转换",
           "severity": "MEDIUM",
           "description": "对同一列进行多次相同类型的转换",
-          "files": ["example_04_repeated_transform.py"]
+          "files": [
+            "example_04_repeated_transform.py",
+            "example_24_repeated_transform_b.py"
+          ]
         },
         {
           "id": "EXCESSIVE_COPY",
           "name": "过度复制",
           "severity": "LOW",
           "description": "不必要的数据复制操作",
-          "files": ["example_11_excessive_copy.py"]
+          "files": [
+            "example_11_excessive_copy.py",
+            "example_31_excessive_copy_b.py"
+          ]
         },
         {
           "id": "REDUNDANT_OPERATION",
           "name": "冗余操作",
           "severity": "MEDIUM",
           "description": "操作效果互相抵消或重复",
-          "files": ["example_10_redundant_operation.py"]
+          "files": [
+            "example_10_redundant_operation.py",
+            "example_30_redundant_operation_b.py"
+          ]
         }
       ]
     },
@@ -70,21 +92,32 @@
           "name": "缺少随机种子",
           "severity": "HIGH",
           "description": "涉及随机性的操作未设置random_state参数",
-          "files": ["example_02_missing_random_seed.py", "example_20_multiple_smells.py"]
+          "files": [
+            "example_02_missing_random_seed.py",
+            "example_20_multiple_smells.py",
+            "example_22_missing_random_seed_b.py",
+            "example_40_multiple_smells_b.py"
+          ]
         },
         {
           "id": "MISSING_VALIDATION",
           "name": "缺少验证集",
           "severity": "CRITICAL",
           "description": "Pipeline中直接使用训练集评估模型性能，缺少独立的验证或测试集",
-          "files": ["example_03_missing_validation.py"]
+          "files": [
+            "example_03_missing_validation.py",
+            "example_23_missing_validation_b.py"
+          ]
         },
         {
           "id": "MISSING_DATA_PROFILING",
           "name": "缺少数据探索",
           "severity": "LOW",
           "description": "没有head/describe等数据探索操作",
-          "files": ["example_09_missing_data_profiling.py"]
+          "files": [
+            "example_09_missing_data_profiling.py",
+            "example_29_missing_data_profiling_b.py"
+          ]
         }
       ]
     },
@@ -96,21 +129,30 @@
           "name": "低效聚合",
           "severity": "MEDIUM",
           "description": "循环逐行聚合而非向量化操作",
-          "files": ["example_08_inefficient_aggregation.py"]
+          "files": [
+            "example_08_inefficient_aggregation.py",
+            "example_28_inefficient_aggregation_b.py"
+          ]
         },
         {
           "id": "UNNECESSARY_MATERIALIZATION",
           "name": "不必要物化",
           "severity": "LOW",
           "description": "频繁的中间结果保存",
-          "files": ["example_16_unnecessary_materialization.py"]
+          "files": [
+            "example_16_unnecessary_materialization.py",
+            "example_36_unnecessary_materialization_b.py"
+          ]
         },
         {
           "id": "LARGE_DATA_FRAME_OPERATION",
           "name": "大DataFrame操作",
           "severity": "MEDIUM",
           "description": "对大DataFrame的全量遍历",
-          "files": ["example_17_large_dataframe_operation.py"]
+          "files": [
+            "example_17_large_dataframe_operation.py",
+            "example_37_large_dataframe_operation_b.py"
+          ]
         }
       ]
     },
@@ -122,21 +164,30 @@
           "name": "循环依赖",
           "severity": "HIGH",
           "description": "模块间的循环依赖关系",
-          "files": ["example_13_circular_dependency.py"]
+          "files": [
+            "example_13_circular_dependency.py",
+            "example_33_circular_dependency_b.py"
+          ]
         },
         {
           "id": "IMPROPER_MODULE_COHESION",
           "name": "模块内聚不当",
           "severity": "MEDIUM",
           "description": "模块包含多种不同类型的操作",
-          "files": ["example_14_improper_module_cohesion.py"]
+          "files": [
+            "example_14_improper_module_cohesion.py",
+            "example_34_improper_module_cohesion_b.py"
+          ]
         },
         {
           "id": "PIPELINE_FRAGMENTATION",
           "name": "Pipeline碎片化",
           "severity": "LOW",
           "description": "包含大量短小的操作链",
-          "files": ["example_15_pipeline_fragmentation.py"]
+          "files": [
+            "example_15_pipeline_fragmentation.py",
+            "example_35_pipeline_fragmentation_b.py"
+          ]
         }
       ]
     },
@@ -148,21 +199,32 @@
           "name": "硬编码参数",
           "severity": "MEDIUM",
           "description": "超参数直接写死在代码中",
-          "files": ["example_06_hardcoded_parameters.py", "example_20_multiple_smells.py"]
+          "files": [
+            "example_06_hardcoded_parameters.py",
+            "example_20_multiple_smells.py",
+            "example_26_hardcoded_parameters_b.py",
+            "example_40_multiple_smells_b.py"
+          ]
         },
         {
           "id": "LACK_OF_VERSION_CONTROL",
           "name": "缺少版本控制",
           "severity": "MEDIUM",
           "description": "没有requirements.txt记录依赖版本",
-          "files": ["example_18_lack_version_control.py"]
+          "files": [
+            "example_18_lack_version_control.py",
+            "example_38_lack_version_control_b.py"
+          ]
         },
         {
           "id": "NON_DETERMINISTIC_ORDER",
           "name": "非确定性顺序",
           "severity": "LOW",
           "description": "使用set/dict的无序迭代",
-          "files": ["example_07_nondeterministic_order.py"]
+          "files": [
+            "example_07_nondeterministic_order.py",
+            "example_27_nondeterministic_order_b.py"
+          ]
         }
       ]
     }
@@ -421,43 +483,297 @@
           "severity": "HIGH"
         }
       ]
+    },
+    {
+      "file": "example_21_data_leakage_b.py",
+      "smells": [
+        {
+          "type": "DATA_LEAKAGE",
+          "line_start": 20,
+          "line_end": 20,
+          "description": "在train_test_split之前对整个数据集执行MinMaxScaler.fit_transform()",
+          "severity": "CRITICAL"
+        }
+      ]
+    },
+    {
+      "file": "example_22_missing_random_seed_b.py",
+      "smells": [
+        {
+          "type": "MISSING_RANDOM_SEED",
+          "line_start": 17,
+          "line_end": 17,
+          "description": "train_test_split未设置random_state参数",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "example_23_missing_validation_b.py",
+      "smells": [
+        {
+          "type": "MISSING_VALIDATION",
+          "line_start": 17,
+          "line_end": 21,
+          "description": "没有划分训练集和测试集，直接在全部数据上训练和评估",
+          "severity": "CRITICAL"
+        }
+      ]
+    },
+    {
+      "file": "example_24_repeated_transform_b.py",
+      "smells": [
+        {
+          "type": "REPEATED_TRANSFORM",
+          "line_start": 24,
+          "line_end": 25,
+          "description": "对同一数据链使用RobustScaler与StandardScaler两次缩放",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "example_25_missing_evaluation_b.py",
+      "smells": [
+        {
+          "type": "MISSING_EVALUATION",
+          "line_start": 20,
+          "line_end": 24,
+          "description": "有模型训练但没有调用score()或任何评估指标",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "example_26_hardcoded_parameters_b.py",
+      "smells": [
+        {
+          "type": "HARDCODED_PARAMETERS",
+          "line_start": 19,
+          "line_end": 26,
+          "description": "GradientBoostingClassifier参数硬编码",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "example_27_nondeterministic_order_b.py",
+      "smells": [
+        {
+          "type": "NON_DETERMINISTIC_ORDER",
+          "line_start": 16,
+          "line_end": 16,
+          "description": "将dict键转为list，迭代顺序存在不确定性",
+          "severity": "LOW"
+        }
+      ]
+    },
+    {
+      "file": "example_28_inefficient_aggregation_b.py",
+      "smells": [
+        {
+          "type": "INEFFICIENT_AGGREGATION",
+          "line_start": 16,
+          "line_end": 19,
+          "description": "使用循环逐行计算均值，而非向量化操作",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "example_29_missing_data_profiling_b.py",
+      "smells": [
+        {
+          "type": "MISSING_DATA_PROFILING",
+          "line_start": 14,
+          "line_end": 14,
+          "description": "加载数据后没有进行head/describe等数据探索",
+          "severity": "LOW"
+        }
+      ]
+    },
+    {
+      "file": "example_30_redundant_operation_b.py",
+      "smells": [
+        {
+          "type": "REDUNDANT_OPERATION",
+          "line_start": 15,
+          "line_end": 16,
+          "description": "dropna后立即fillna，操作效果互相抵消",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "example_31_excessive_copy_b.py",
+      "smells": [
+        {
+          "type": "EXCESSIVE_COPY",
+          "line_start": 16,
+          "line_end": 18,
+          "description": "不必要的数据复制，后续操作不会修改原始数据",
+          "severity": "LOW"
+        }
+      ]
+    },
+    {
+      "file": "example_32_module_order_violation_b.py",
+      "smells": [
+        {
+          "type": "MODULE_ORDER_VIOLATION",
+          "line_start": 21,
+          "line_end": 26,
+          "description": "特征选择应在标准化之前进行",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "example_33_circular_dependency_b.py",
+      "smells": [
+        {
+          "type": "CIRCULAR_DEPENDENCY",
+          "line_start": 12,
+          "line_end": 21,
+          "description": "process_data_a和process_data_b互相依赖",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "example_34_improper_module_cohesion_b.py",
+      "smells": [
+        {
+          "type": "IMPROPER_MODULE_COHESION",
+          "line_start": 1,
+          "line_end": 52,
+          "description": "一个代码块包含数据清洗、可视化、模型训练、参数调优多种操作",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "example_35_pipeline_fragmentation_b.py",
+      "smells": [
+        {
+          "type": "PIPELINE_FRAGMENTATION",
+          "line_start": 12,
+          "line_end": 24,
+          "description": "包含大量短小的操作链，每个操作都单独一行",
+          "severity": "LOW"
+        }
+      ]
+    },
+    {
+      "file": "example_36_unnecessary_materialization_b.py",
+      "smells": [
+        {
+          "type": "UNNECESSARY_MATERIALIZATION",
+          "line_start": 16,
+          "line_end": 32,
+          "description": "频繁保存中间结果到CSV文件",
+          "severity": "LOW"
+        }
+      ]
+    },
+    {
+      "file": "example_37_large_dataframe_operation_b.py",
+      "smells": [
+        {
+          "type": "LARGE_DATA_FRAME_OPERATION",
+          "line_start": 17,
+          "line_end": 19,
+          "description": "对大DataFrame使用iterrows()逐行遍历",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "example_38_lack_version_control_b.py",
+      "smells": [
+        {
+          "type": "LACK_OF_VERSION_CONTROL",
+          "line_start": 1,
+          "line_end": 40,
+          "description": "没有requirements.txt记录依赖版本",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "example_39_clean_pipeline_b.py",
+      "smells": [],
+      "note": "这是一个干净的Pipeline示例，没有Smell"
+    },
+    {
+      "file": "example_40_multiple_smells_b.py",
+      "smells": [
+        {
+          "type": "DATA_LEAKAGE",
+          "line_start": 17,
+          "line_end": 18,
+          "description": "在划分前对整个数据集标准化",
+          "severity": "CRITICAL"
+        },
+        {
+          "type": "MISSING_RANDOM_SEED",
+          "line_start": 21,
+          "line_end": 21,
+          "description": "train_test_split未设置random_state",
+          "severity": "HIGH"
+        },
+        {
+          "type": "HARDCODED_PARAMETERS",
+          "line_start": 24,
+          "line_end": 29,
+          "description": "LogisticRegression参数硬编码",
+          "severity": "MEDIUM"
+        },
+        {
+          "type": "MISSING_EVALUATION",
+          "line_start": 31,
+          "line_end": 32,
+          "description": "没有评估步骤",
+          "severity": "HIGH"
+        }
+      ]
     }
   ],
   "statistics": {
-    "total_smells": 24,
+    "total_smells": 44,
     "by_category": {
-      "ORDER": 4,
-      "REDUNDANCY": 3,
-      "MISSING": 4,
-      "PERFORMANCE": 3,
-      "STRUCTURE": 3,
-      "REPRODUCIBILITY": 7
+      "ORDER": 10,
+      "MISSING": 8,
+      "REDUNDANCY": 6,
+      "REPRODUCIBILITY": 8,
+      "PERFORMANCE": 6,
+      "STRUCTURE": 6
     },
     "by_severity": {
-      "CRITICAL": 4,
-      "HIGH": 5,
-      "MEDIUM": 9,
-      "LOW": 6
+      "CRITICAL": 6,
+      "HIGH": 10,
+      "MEDIUM": 18,
+      "LOW": 10
     },
     "by_type": {
-      "DATA_LEAKAGE": 2,
-      "MISSING_EVALUATION": 2,
-      "MODULE_ORDER_VIOLATION": 1,
-      "REPEATED_TRANSFORM": 1,
-      "EXCESSIVE_COPY": 1,
-      "REDUNDANT_OPERATION": 1,
-      "MISSING_RANDOM_SEED": 2,
-      "MISSING_VALIDATION": 1,
-      "MISSING_DATA_PROFILING": 1,
-      "INEFFICIENT_AGGREGATION": 1,
-      "UNNECESSARY_MATERIALIZATION": 1,
-      "LARGE_DATA_FRAME_OPERATION": 1,
-      "CIRCULAR_DEPENDENCY": 1,
-      "IMPROPER_MODULE_COHESION": 1,
-      "PIPELINE_FRAGMENTATION": 1,
-      "HARDCODED_PARAMETERS": 2,
-      "LACK_OF_VERSION_CONTROL": 1,
-      "NON_DETERMINISTIC_ORDER": 1
+      "DATA_LEAKAGE": 4,
+      "MISSING_RANDOM_SEED": 4,
+      "MISSING_VALIDATION": 2,
+      "REPEATED_TRANSFORM": 2,
+      "MISSING_EVALUATION": 4,
+      "HARDCODED_PARAMETERS": 4,
+      "NON_DETERMINISTIC_ORDER": 2,
+      "INEFFICIENT_AGGREGATION": 2,
+      "MISSING_DATA_PROFILING": 2,
+      "REDUNDANT_OPERATION": 2,
+      "EXCESSIVE_COPY": 2,
+      "MODULE_ORDER_VIOLATION": 2,
+      "CIRCULAR_DEPENDENCY": 2,
+      "IMPROPER_MODULE_COHESION": 2,
+      "PIPELINE_FRAGMENTATION": 2,
+      "UNNECESSARY_MATERIALIZATION": 2,
+      "LARGE_DATA_FRAME_OPERATION": 2,
+      "LACK_OF_VERSION_CONTROL": 2
     }
   }
 }

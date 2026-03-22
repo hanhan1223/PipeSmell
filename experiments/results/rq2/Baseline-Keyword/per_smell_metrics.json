@@ -5,12 +5,23 @@
     "f1_score": 0.0,
     "accuracy": 0.0,
     "total_predictions": 0,
-    "total_ground_truth": 1,
+    "total_ground_truth": 2,
     "true_positives": 0,
     "false_positives": 0,
-    "false_negatives": 1
+    "false_negatives": 2
   },
   "DATA_LEAKAGE": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "accuracy": 0.0,
+    "total_predictions": 0,
+    "total_ground_truth": 4,
+    "true_positives": 0,
+    "false_positives": 0,
+    "false_negatives": 4
+  },
+  "EXCESSIVE_COPY": {
     "precision": 0.0,
     "recall": 0.0,
     "f1_score": 0.0,
@@ -21,26 +32,15 @@
     "false_positives": 0,
     "false_negatives": 2
   },
-  "EXCESSIVE_COPY": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1_score": 0.0,
-    "accuracy": 0.0,
-    "total_predictions": 0,
-    "total_ground_truth": 1,
-    "true_positives": 0,
-    "false_positives": 0,
-    "false_negatives": 1
-  },
   "HARDCODED_PARAMETERS": {
-    "precision": 0.2857142857142857,
+    "precision": 0.3333333333333333,
     "recall": 1.0,
-    "f1_score": 0.4444444444444445,
-    "accuracy": 0.2857142857142857,
-    "total_predictions": 7,
-    "total_ground_truth": 2,
-    "true_positives": 2,
-    "false_positives": 5,
+    "f1_score": 0.5,
+    "accuracy": 0.3333333333333333,
+    "total_predictions": 12,
+    "total_ground_truth": 4,
+    "true_positives": 4,
+    "false_positives": 8,
     "false_negatives": 0
   },
   "IMPROPER_MODULE_COHESION": {
@@ -49,10 +49,10 @@
     "f1_score": 0.0,
     "accuracy": 0.0,
     "total_predictions": 0,
-    "total_ground_truth": 1,
+    "total_ground_truth": 2,
     "true_positives": 0,
     "false_positives": 0,
-    "false_negatives": 1
+    "false_negatives": 2
   },
   "INEFFICIENT_AGGREGATION": {
     "precision": 0.0,
@@ -60,10 +60,10 @@
     "f1_score": 0.0,
     "accuracy": 0.0,
     "total_predictions": 0,
-    "total_ground_truth": 1,
+    "total_ground_truth": 2,
     "true_positives": 0,
     "false_positives": 0,
-    "false_negatives": 1
+    "false_negatives": 2
   },
   "LACK_OF_VERSION_CONTROL": {
     "precision": 0.0,
@@ -71,10 +71,10 @@
     "f1_score": 0.0,
     "accuracy": 0.0,
     "total_predictions": 0,
-    "total_ground_truth": 1,
+    "total_ground_truth": 2,
     "true_positives": 0,
     "false_positives": 0,
-    "false_negatives": 1
+    "false_negatives": 2
   },
   "LARGE_DATA_FRAME_OPERATION": {
     "precision": 0.0,
@@ -82,10 +82,10 @@
     "f1_score": 0.0,
     "accuracy": 0.0,
     "total_predictions": 0,
-    "total_ground_truth": 1,
+    "total_ground_truth": 2,
     "true_positives": 0,
     "false_positives": 0,
-    "false_negatives": 1
+    "false_negatives": 2
   },
   "MISSING_DATA_PROFILING": {
     "precision": 0.0,
@@ -93,32 +93,32 @@
     "f1_score": 0.0,
     "accuracy": 0.0,
     "total_predictions": 0,
-    "total_ground_truth": 1,
+    "total_ground_truth": 2,
     "true_positives": 0,
     "false_positives": 0,
-    "false_negatives": 1
+    "false_negatives": 2
   },
   "MISSING_EVALUATION": {
     "precision": 0.058823529411764705,
     "recall": 0.5,
     "f1_score": 0.10526315789473684,
     "accuracy": 0.05555555555555555,
-    "total_predictions": 17,
-    "total_ground_truth": 2,
-    "true_positives": 1,
-    "false_positives": 16,
-    "false_negatives": 1
+    "total_predictions": 34,
+    "total_ground_truth": 4,
+    "true_positives": 2,
+    "false_positives": 32,
+    "false_negatives": 2
   },
   "MISSING_RANDOM_SEED": {
     "precision": 0.07692307692307693,
     "recall": 0.5,
     "f1_score": 0.13333333333333336,
     "accuracy": 0.07142857142857142,
-    "total_predictions": 13,
-    "total_ground_truth": 2,
-    "true_positives": 1,
-    "false_positives": 12,
-    "false_negatives": 1
+    "total_predictions": 26,
+    "total_ground_truth": 4,
+    "true_positives": 2,
+    "false_positives": 24,
+    "false_negatives": 2
   },
   "MISSING_VALIDATION": {
     "precision": 0.0,
@@ -126,10 +126,10 @@
     "f1_score": 0.0,
     "accuracy": 0.0,
     "total_predictions": 0,
-    "total_ground_truth": 1,
+    "total_ground_truth": 2,
     "true_positives": 0,
     "false_positives": 0,
-    "false_negatives": 1
+    "false_negatives": 2
   },
   "MODULE_ORDER_VIOLATION": {
     "precision": 0.0,
@@ -137,10 +137,10 @@
     "f1_score": 0.0,
     "accuracy": 0.0,
     "total_predictions": 0,
-    "total_ground_truth": 1,
+    "total_ground_truth": 2,
     "true_positives": 0,
     "false_positives": 0,
-    "false_negatives": 1
+    "false_negatives": 2
   },
   "NON_DETERMINISTIC_ORDER": {
     "precision": 0.0,
@@ -148,10 +148,10 @@
     "f1_score": 0.0,
     "accuracy": 0.0,
     "total_predictions": 0,
-    "total_ground_truth": 1,
+    "total_ground_truth": 2,
     "true_positives": 0,
     "false_positives": 0,
-    "false_negatives": 1
+    "false_negatives": 2
   },
   "PIPELINE_FRAGMENTATION": {
     "precision": 0.0,
@@ -159,10 +159,10 @@
     "f1_score": 0.0,
     "accuracy": 0.0,
     "total_predictions": 0,
-    "total_ground_truth": 1,
+    "total_ground_truth": 2,
     "true_positives": 0,
     "false_positives": 0,
-    "false_negatives": 1
+    "false_negatives": 2
   },
   "REDUNDANT_OPERATION": {
     "precision": 0.0,
@@ -170,10 +170,10 @@
     "f1_score": 0.0,
     "accuracy": 0.0,
     "total_predictions": 0,
-    "total_ground_truth": 1,
+    "total_ground_truth": 2,
     "true_positives": 0,
     "false_positives": 0,
-    "false_negatives": 1
+    "false_negatives": 2
   },
   "REPEATED_TRANSFORM": {
     "precision": 0.0,
@@ -181,10 +181,10 @@
     "f1_score": 0.0,
     "accuracy": 0.0,
     "total_predictions": 0,
-    "total_ground_truth": 1,
+    "total_ground_truth": 2,
     "true_positives": 0,
     "false_positives": 0,
-    "false_negatives": 1
+    "false_negatives": 2
   },
   "UNNECESSARY_MATERIALIZATION": {
     "precision": 0.0,
@@ -192,9 +192,9 @@
     "f1_score": 0.0,
     "accuracy": 0.0,
     "total_predictions": 0,
-    "total_ground_truth": 1,
+    "total_ground_truth": 2,
     "true_positives": 0,
     "false_positives": 0,
-    "false_negatives": 1
+    "false_negatives": 2
   }
 }

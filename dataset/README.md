@@ -2,7 +2,7 @@
 
 ## 数据集概述
 
-这是一个专门为 **Pipeline Smell Detection System** 构建的标注数据集，包含20个Python机器学习Pipeline代码文件，涵盖全部18种Pipeline Smell类型。
+这是一个专门为 **Pipeline Smell Detection System** 构建的标注数据集，包含 **40** 个 Python 机器学习 Pipeline 代码文件（`example_01`–`example_20` 与对应的变体 B `example_21`–`example_40`），涵盖全部 18 种 Pipeline Smell 类型。
 
 ## 文件结构
 
@@ -38,21 +38,21 @@ dataset/
 
 | 类别 | 数量 | Smell类型 |
 |------|------|-----------|
-| ORDER | 4 | DATA_LEAKAGE, MISSING_EVALUATION, MODULE_ORDER_VIOLATION |
-| REDUNDANCY | 3 | REPEATED_TRANSFORM, EXCESSIVE_COPY, REDUNDANT_OPERATION |
-| MISSING | 4 | MISSING_RANDOM_SEED, MISSING_VALIDATION, MISSING_DATA_PROFILING |
-| PERFORMANCE | 3 | INEFFICIENT_AGGREGATION, UNNECESSARY_MATERIALIZATION, LARGE_DATA_FRAME_OPERATION |
-| STRUCTURE | 3 | CIRCULAR_DEPENDENCY, IMPROPER_MODULE_COHESION, PIPELINE_FRAGMENTATION |
-| REPRODUCIBILITY | 7 | HARDCODED_PARAMETERS, LACK_OF_VERSION_CONTROL, NON_DETERMINISTIC_ORDER |
+| ORDER | 10 | DATA_LEAKAGE, MISSING_EVALUATION, MODULE_ORDER_VIOLATION |
+| REDUNDANCY | 6 | REPEATED_TRANSFORM, EXCESSIVE_COPY, REDUNDANT_OPERATION |
+| MISSING | 8 | MISSING_RANDOM_SEED, MISSING_VALIDATION, MISSING_DATA_PROFILING |
+| PERFORMANCE | 6 | INEFFICIENT_AGGREGATION, UNNECESSARY_MATERIALIZATION, LARGE_DATA_FRAME_OPERATION |
+| STRUCTURE | 6 | CIRCULAR_DEPENDENCY, IMPROPER_MODULE_COHESION, PIPELINE_FRAGMENTATION |
+| REPRODUCIBILITY | 8 | HARDCODED_PARAMETERS, LACK_OF_VERSION_CONTROL, NON_DETERMINISTIC_ORDER |
 
 ### 按严重程度统计
 
 | 严重程度 | 数量 |
 |----------|------|
-| CRITICAL | 4 |
-| HIGH | 5 |
-| MEDIUM | 9 |
-| LOW | 6 |
+| CRITICAL | 6 |
+| HIGH | 10 |
+| MEDIUM | 18 |
+| LOW | 10 |
 
 ## 使用方法
 
@@ -118,8 +118,8 @@ print(f"Total smells: {stats['total_smells']}")
 
 ## 注意事项
 
-1. **文件19** (`example_19_clean_pipeline.py`) 是一个**干净的Pipeline示例**，没有任何Smell，用于对比测试
-2. **文件20** (`example_20_multiple_smells.py`) 包含**多种Smell混合**，用于测试系统的多标签检测能力
+1. **文件19 / 39**（`example_19_clean_pipeline.py`、`example_39_clean_pipeline_b.py`）为**干净 Pipeline**，无 Smell，用于对比测试
+2. **文件20 / 40**（`example_20_multiple_smells.py`、`example_40_multiple_smells_b.py`）为**多种 Smell 混合**，用于多标签检测
 3. 所有代码都是**可运行的Python代码**，但可能需要安装依赖：`pip install pandas scikit-learn numpy matplotlib`
 
 ## 扩展数据集

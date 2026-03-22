@@ -2882,3 +2882,913 @@
 2026-03-22 16:39:58 - DetectorRegistry - INFO - 已注册检测器: LACK_OF_VERSION_CONTROL
 2026-03-22 16:39:58 - NonDeterministicOrderDetector - INFO - NonDeterministicOrderDetector初始化完成
 2026-03-22 16:39:58 - DetectorRegistry - INFO - 已注册检测器: NON_DETERMINISTIC_ORDER
+2026-03-22 22:51:46 - DataLeakageDetector - INFO - DataLeakageDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: DATA_LEAKAGE
+2026-03-22 22:51:46 - MissingEvaluationDetector - INFO - MissingEvaluationDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: MISSING_EVALUATION
+2026-03-22 22:51:46 - ModuleOrderViolationDetector - INFO - ModuleOrderViolationDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: MODULE_ORDER_VIOLATION
+2026-03-22 22:51:46 - RepeatedTransformDetector - INFO - RepeatedTransformDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: REPEATED_TRANSFORM
+2026-03-22 22:51:46 - ExcessiveCopyDetector - INFO - ExcessiveCopyDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: EXCESSIVE_COPY
+2026-03-22 22:51:46 - RedundantOperationDetector - INFO - RedundantOperationDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: REDUNDANT_OPERATION
+2026-03-22 22:51:46 - MissingRandomSeedDetector - INFO - MissingRandomSeedDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: MISSING_RANDOM_SEED
+2026-03-22 22:51:46 - MissingValidationDetector - INFO - MissingValidationDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: MISSING_VALIDATION
+2026-03-22 22:51:46 - MissingDataProfilingDetector - INFO - MissingDataProfilingDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: MISSING_DATA_PROFILING
+2026-03-22 22:51:46 - InefficientAggregationDetector - INFO - InefficientAggregationDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: INEFFICIENT_AGGREGATION
+2026-03-22 22:51:46 - UnnecessaryMaterializationDetector - INFO - UnnecessaryMaterializationDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: UNNECESSARY_MATERIALIZATION
+2026-03-22 22:51:46 - LargeDataFrameOperationDetector - INFO - LargeDataFrameOperationDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: LARGE_DATA_FRAME_OPERATION
+2026-03-22 22:51:46 - CircularDependencyDetector - INFO - CircularDependencyDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: CIRCULAR_DEPENDENCY
+2026-03-22 22:51:46 - ImproperModuleCohesionDetector - INFO - ImproperModuleCohesionDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: IMPROPER_MODULE_COHESION
+2026-03-22 22:51:46 - PipelineFragmentationDetector - INFO - PipelineFragmentationDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: PIPELINE_FRAGMENTATION
+2026-03-22 22:51:46 - HardcodedParametersDetector - INFO - HardcodedParametersDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: HARDCODED_PARAMETERS
+2026-03-22 22:51:46 - LackOfVersionControlDetector - INFO - LackOfVersionControlDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: LACK_OF_VERSION_CONTROL
+2026-03-22 22:51:46 - NonDeterministicOrderDetector - INFO - NonDeterministicOrderDetector初始化完成
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 已注册检测器: NON_DETERMINISTIC_ORDER
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_21_data_leakage_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - DataLeakageDetector - INFO - 检测到数据泄露: fit_transform at line 20
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.68ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_22_missing_random_seed_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - MissingRandomSeedDetector - INFO - 检测到缺少随机种子: train_test_split at line 17
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.56ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_23_missing_validation_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - MissingValidationDetector - INFO - 检测到缺少验证集: at line 17
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.69ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_24_repeated_transform_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - RepeatedTransformDetector - INFO - 检测到重复转换(多缩放器): at line 24
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.99ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_25_missing_evaluation_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - MissingEvaluationDetector - INFO - 检测到缺少评估: at line 20
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.56ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_26_hardcoded_parameters_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - HardcodedParametersDetector - INFO - 检测到硬编码参数: 5 params at line 19
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.09ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_27_nondeterministic_order_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - NonDeterministicOrderDetector - INFO - 检测到非确定性顺序: 源码扫描 line 16
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 7.05ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_28_inefficient_aggregation_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 0 个Smell，耗时 4.98ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_29_missing_data_profiling_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - MissingDataProfilingDetector - INFO - 检测到缺少数据探索: at line 14
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.98ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_30_redundant_operation_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - RedundantOperationDetector - INFO - 检测到冗余操作: dropna+fillna at line 16
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.99ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_31_excessive_copy_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - ExcessiveCopyDetector - INFO - 检测到过度复制: at line 18
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.99ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_32_module_order_violation_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - ModuleOrderViolationDetector - INFO - 检测到模块顺序违反: at line 24
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.46ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_33_circular_dependency_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - CircularDependencyDetector - INFO - 检测到循环依赖: D:\PipeSmell\dataset\example_33_circular_dependency_b.py:12
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 8.59ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_34_improper_module_cohesion_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - ImproperModuleCohesionDetector - INFO - 检测到模块内聚不当: 7 types at line 1
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 34.21ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_35_pipeline_fragmentation_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - PipelineFragmentationDetector - INFO - 检测到Pipeline碎片化: 12 fragments at line 12
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.33ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_36_unnecessary_materialization_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - UnnecessaryMaterializationDetector - INFO - 检测到不必要物化: at line 18
+2026-03-22 22:51:46 - PipelineFragmentationDetector - INFO - 检测到Pipeline碎片化: 11 fragments at line 13
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 2 个Smell，耗时 5.91ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_37_large_dataframe_operation_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - LargeDataFrameOperationDetector - INFO - 检测到大DataFrame操作: at line 17
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.40ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_38_lack_version_control_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - LackOfVersionControlDetector - INFO - 检测到缺少版本控制: at line 1
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 7.75ms
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_39_clean_pipeline_b.py
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:51:46 - DetectorRegistry - INFO - 检测完成，共找到 0 个Smell，耗时 3.99ms
+2026-03-22 22:52:07 - DataLeakageDetector - INFO - DataLeakageDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: DATA_LEAKAGE
+2026-03-22 22:52:07 - MissingEvaluationDetector - INFO - MissingEvaluationDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: MISSING_EVALUATION
+2026-03-22 22:52:07 - ModuleOrderViolationDetector - INFO - ModuleOrderViolationDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: MODULE_ORDER_VIOLATION
+2026-03-22 22:52:07 - RepeatedTransformDetector - INFO - RepeatedTransformDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: REPEATED_TRANSFORM
+2026-03-22 22:52:07 - ExcessiveCopyDetector - INFO - ExcessiveCopyDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: EXCESSIVE_COPY
+2026-03-22 22:52:07 - RedundantOperationDetector - INFO - RedundantOperationDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: REDUNDANT_OPERATION
+2026-03-22 22:52:07 - MissingRandomSeedDetector - INFO - MissingRandomSeedDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: MISSING_RANDOM_SEED
+2026-03-22 22:52:07 - MissingValidationDetector - INFO - MissingValidationDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: MISSING_VALIDATION
+2026-03-22 22:52:07 - MissingDataProfilingDetector - INFO - MissingDataProfilingDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: MISSING_DATA_PROFILING
+2026-03-22 22:52:07 - InefficientAggregationDetector - INFO - InefficientAggregationDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: INEFFICIENT_AGGREGATION
+2026-03-22 22:52:07 - UnnecessaryMaterializationDetector - INFO - UnnecessaryMaterializationDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: UNNECESSARY_MATERIALIZATION
+2026-03-22 22:52:07 - LargeDataFrameOperationDetector - INFO - LargeDataFrameOperationDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: LARGE_DATA_FRAME_OPERATION
+2026-03-22 22:52:07 - CircularDependencyDetector - INFO - CircularDependencyDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: CIRCULAR_DEPENDENCY
+2026-03-22 22:52:07 - ImproperModuleCohesionDetector - INFO - ImproperModuleCohesionDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: IMPROPER_MODULE_COHESION
+2026-03-22 22:52:07 - PipelineFragmentationDetector - INFO - PipelineFragmentationDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: PIPELINE_FRAGMENTATION
+2026-03-22 22:52:07 - HardcodedParametersDetector - INFO - HardcodedParametersDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: HARDCODED_PARAMETERS
+2026-03-22 22:52:07 - LackOfVersionControlDetector - INFO - LackOfVersionControlDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: LACK_OF_VERSION_CONTROL
+2026-03-22 22:52:07 - NonDeterministicOrderDetector - INFO - NonDeterministicOrderDetector初始化完成
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 已注册检测器: NON_DETERMINISTIC_ORDER
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_16_unnecessary_materialization.py
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:52:07 - UnnecessaryMaterializationDetector - INFO - 检测到不必要物化: at line 20
+2026-03-22 22:52:07 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.09ms
+2026-03-22 22:52:08 - DataLeakageDetector - INFO - DataLeakageDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: DATA_LEAKAGE
+2026-03-22 22:52:08 - MissingEvaluationDetector - INFO - MissingEvaluationDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: MISSING_EVALUATION
+2026-03-22 22:52:08 - ModuleOrderViolationDetector - INFO - ModuleOrderViolationDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: MODULE_ORDER_VIOLATION
+2026-03-22 22:52:08 - RepeatedTransformDetector - INFO - RepeatedTransformDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: REPEATED_TRANSFORM
+2026-03-22 22:52:08 - ExcessiveCopyDetector - INFO - ExcessiveCopyDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: EXCESSIVE_COPY
+2026-03-22 22:52:08 - RedundantOperationDetector - INFO - RedundantOperationDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: REDUNDANT_OPERATION
+2026-03-22 22:52:08 - MissingRandomSeedDetector - INFO - MissingRandomSeedDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: MISSING_RANDOM_SEED
+2026-03-22 22:52:08 - MissingValidationDetector - INFO - MissingValidationDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: MISSING_VALIDATION
+2026-03-22 22:52:08 - MissingDataProfilingDetector - INFO - MissingDataProfilingDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: MISSING_DATA_PROFILING
+2026-03-22 22:52:08 - InefficientAggregationDetector - INFO - InefficientAggregationDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: INEFFICIENT_AGGREGATION
+2026-03-22 22:52:08 - UnnecessaryMaterializationDetector - INFO - UnnecessaryMaterializationDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: UNNECESSARY_MATERIALIZATION
+2026-03-22 22:52:08 - LargeDataFrameOperationDetector - INFO - LargeDataFrameOperationDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: LARGE_DATA_FRAME_OPERATION
+2026-03-22 22:52:08 - CircularDependencyDetector - INFO - CircularDependencyDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: CIRCULAR_DEPENDENCY
+2026-03-22 22:52:08 - ImproperModuleCohesionDetector - INFO - ImproperModuleCohesionDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: IMPROPER_MODULE_COHESION
+2026-03-22 22:52:08 - PipelineFragmentationDetector - INFO - PipelineFragmentationDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: PIPELINE_FRAGMENTATION
+2026-03-22 22:52:08 - HardcodedParametersDetector - INFO - HardcodedParametersDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: HARDCODED_PARAMETERS
+2026-03-22 22:52:08 - LackOfVersionControlDetector - INFO - LackOfVersionControlDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: LACK_OF_VERSION_CONTROL
+2026-03-22 22:52:08 - NonDeterministicOrderDetector - INFO - NonDeterministicOrderDetector初始化完成
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 已注册检测器: NON_DETERMINISTIC_ORDER
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_40_multiple_smells_b.py
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:52:08 - DataLeakageDetector - INFO - 检测到数据泄露: fit_transform at line 18
+2026-03-22 22:52:08 - MissingEvaluationDetector - INFO - 检测到缺少评估: at line 31
+2026-03-22 22:52:08 - MissingRandomSeedDetector - INFO - 检测到缺少随机种子: train_test_split at line 21
+2026-03-22 22:52:08 - HardcodedParametersDetector - INFO - 检测到硬编码参数: 4 params at line 24
+2026-03-22 22:52:08 - DetectorRegistry - INFO - 检测完成，共找到 4 个Smell，耗时 7.11ms
+2026-03-22 22:52:44 - DataLeakageDetector - INFO - DataLeakageDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: DATA_LEAKAGE
+2026-03-22 22:52:44 - MissingEvaluationDetector - INFO - MissingEvaluationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: MISSING_EVALUATION
+2026-03-22 22:52:44 - ModuleOrderViolationDetector - INFO - ModuleOrderViolationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: MODULE_ORDER_VIOLATION
+2026-03-22 22:52:44 - RepeatedTransformDetector - INFO - RepeatedTransformDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: REPEATED_TRANSFORM
+2026-03-22 22:52:44 - ExcessiveCopyDetector - INFO - ExcessiveCopyDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: EXCESSIVE_COPY
+2026-03-22 22:52:44 - RedundantOperationDetector - INFO - RedundantOperationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: REDUNDANT_OPERATION
+2026-03-22 22:52:44 - MissingRandomSeedDetector - INFO - MissingRandomSeedDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: MISSING_RANDOM_SEED
+2026-03-22 22:52:44 - MissingValidationDetector - INFO - MissingValidationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: MISSING_VALIDATION
+2026-03-22 22:52:44 - MissingDataProfilingDetector - INFO - MissingDataProfilingDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: MISSING_DATA_PROFILING
+2026-03-22 22:52:44 - InefficientAggregationDetector - INFO - InefficientAggregationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: INEFFICIENT_AGGREGATION
+2026-03-22 22:52:44 - UnnecessaryMaterializationDetector - INFO - UnnecessaryMaterializationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: UNNECESSARY_MATERIALIZATION
+2026-03-22 22:52:44 - LargeDataFrameOperationDetector - INFO - LargeDataFrameOperationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: LARGE_DATA_FRAME_OPERATION
+2026-03-22 22:52:44 - CircularDependencyDetector - INFO - CircularDependencyDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: CIRCULAR_DEPENDENCY
+2026-03-22 22:52:44 - ImproperModuleCohesionDetector - INFO - ImproperModuleCohesionDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: IMPROPER_MODULE_COHESION
+2026-03-22 22:52:44 - PipelineFragmentationDetector - INFO - PipelineFragmentationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: PIPELINE_FRAGMENTATION
+2026-03-22 22:52:44 - HardcodedParametersDetector - INFO - HardcodedParametersDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: HARDCODED_PARAMETERS
+2026-03-22 22:52:44 - LackOfVersionControlDetector - INFO - LackOfVersionControlDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: LACK_OF_VERSION_CONTROL
+2026-03-22 22:52:44 - NonDeterministicOrderDetector - INFO - NonDeterministicOrderDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: NON_DETERMINISTIC_ORDER
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_28_inefficient_aggregation_b.py
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:52:44 - InefficientAggregationDetector - INFO - 检测到低效聚合: iterrows at line 17
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.11ms
+2026-03-22 22:52:44 - DataLeakageDetector - INFO - DataLeakageDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: DATA_LEAKAGE
+2026-03-22 22:52:44 - MissingEvaluationDetector - INFO - MissingEvaluationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: MISSING_EVALUATION
+2026-03-22 22:52:44 - ModuleOrderViolationDetector - INFO - ModuleOrderViolationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: MODULE_ORDER_VIOLATION
+2026-03-22 22:52:44 - RepeatedTransformDetector - INFO - RepeatedTransformDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: REPEATED_TRANSFORM
+2026-03-22 22:52:44 - ExcessiveCopyDetector - INFO - ExcessiveCopyDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: EXCESSIVE_COPY
+2026-03-22 22:52:44 - RedundantOperationDetector - INFO - RedundantOperationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: REDUNDANT_OPERATION
+2026-03-22 22:52:44 - MissingRandomSeedDetector - INFO - MissingRandomSeedDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: MISSING_RANDOM_SEED
+2026-03-22 22:52:44 - MissingValidationDetector - INFO - MissingValidationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: MISSING_VALIDATION
+2026-03-22 22:52:44 - MissingDataProfilingDetector - INFO - MissingDataProfilingDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: MISSING_DATA_PROFILING
+2026-03-22 22:52:44 - InefficientAggregationDetector - INFO - InefficientAggregationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: INEFFICIENT_AGGREGATION
+2026-03-22 22:52:44 - UnnecessaryMaterializationDetector - INFO - UnnecessaryMaterializationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: UNNECESSARY_MATERIALIZATION
+2026-03-22 22:52:44 - LargeDataFrameOperationDetector - INFO - LargeDataFrameOperationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: LARGE_DATA_FRAME_OPERATION
+2026-03-22 22:52:44 - CircularDependencyDetector - INFO - CircularDependencyDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: CIRCULAR_DEPENDENCY
+2026-03-22 22:52:44 - ImproperModuleCohesionDetector - INFO - ImproperModuleCohesionDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: IMPROPER_MODULE_COHESION
+2026-03-22 22:52:44 - PipelineFragmentationDetector - INFO - PipelineFragmentationDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: PIPELINE_FRAGMENTATION
+2026-03-22 22:52:44 - HardcodedParametersDetector - INFO - HardcodedParametersDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: HARDCODED_PARAMETERS
+2026-03-22 22:52:44 - LackOfVersionControlDetector - INFO - LackOfVersionControlDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: LACK_OF_VERSION_CONTROL
+2026-03-22 22:52:44 - NonDeterministicOrderDetector - INFO - NonDeterministicOrderDetector初始化完成
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 已注册检测器: NON_DETERMINISTIC_ORDER
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_36_unnecessary_materialization_b.py
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:52:44 - UnnecessaryMaterializationDetector - INFO - 检测到不必要物化: at line 20
+2026-03-22 22:52:44 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.88ms
+2026-03-22 22:55:40 - DataLeakageDetector - INFO - DataLeakageDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: DATA_LEAKAGE
+2026-03-22 22:55:40 - MissingEvaluationDetector - INFO - MissingEvaluationDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: MISSING_EVALUATION
+2026-03-22 22:55:40 - ModuleOrderViolationDetector - INFO - ModuleOrderViolationDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: MODULE_ORDER_VIOLATION
+2026-03-22 22:55:40 - RepeatedTransformDetector - INFO - RepeatedTransformDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: REPEATED_TRANSFORM
+2026-03-22 22:55:40 - ExcessiveCopyDetector - INFO - ExcessiveCopyDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: EXCESSIVE_COPY
+2026-03-22 22:55:40 - RedundantOperationDetector - INFO - RedundantOperationDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: REDUNDANT_OPERATION
+2026-03-22 22:55:40 - MissingRandomSeedDetector - INFO - MissingRandomSeedDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: MISSING_RANDOM_SEED
+2026-03-22 22:55:40 - MissingValidationDetector - INFO - MissingValidationDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: MISSING_VALIDATION
+2026-03-22 22:55:40 - MissingDataProfilingDetector - INFO - MissingDataProfilingDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: MISSING_DATA_PROFILING
+2026-03-22 22:55:40 - InefficientAggregationDetector - INFO - InefficientAggregationDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: INEFFICIENT_AGGREGATION
+2026-03-22 22:55:40 - UnnecessaryMaterializationDetector - INFO - UnnecessaryMaterializationDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: UNNECESSARY_MATERIALIZATION
+2026-03-22 22:55:40 - LargeDataFrameOperationDetector - INFO - LargeDataFrameOperationDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: LARGE_DATA_FRAME_OPERATION
+2026-03-22 22:55:40 - CircularDependencyDetector - INFO - CircularDependencyDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: CIRCULAR_DEPENDENCY
+2026-03-22 22:55:40 - ImproperModuleCohesionDetector - INFO - ImproperModuleCohesionDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: IMPROPER_MODULE_COHESION
+2026-03-22 22:55:40 - PipelineFragmentationDetector - INFO - PipelineFragmentationDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: PIPELINE_FRAGMENTATION
+2026-03-22 22:55:40 - HardcodedParametersDetector - INFO - HardcodedParametersDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: HARDCODED_PARAMETERS
+2026-03-22 22:55:40 - LackOfVersionControlDetector - INFO - LackOfVersionControlDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: LACK_OF_VERSION_CONTROL
+2026-03-22 22:55:40 - NonDeterministicOrderDetector - INFO - NonDeterministicOrderDetector初始化完成
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 已注册检测器: NON_DETERMINISTIC_ORDER
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_01_data_leakage.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - DataLeakageDetector - INFO - 检测到数据泄露: fit_transform at line 20
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.90ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_02_missing_random_seed.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - MissingRandomSeedDetector - INFO - 检测到缺少随机种子: train_test_split at line 17
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.99ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_03_missing_validation.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - MissingValidationDetector - INFO - 检测到缺少验证集: at line 17
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.37ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_04_repeated_transform.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - RepeatedTransformDetector - INFO - 检测到重复转换(多缩放器): at line 24
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.84ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_05_missing_evaluation.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - MissingEvaluationDetector - INFO - 检测到缺少评估: at line 20
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 2.11ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_06_hardcoded_parameters.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - HardcodedParametersDetector - INFO - 检测到硬编码参数: 5 params at line 19
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.22ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_07_nondeterministic_order.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - NonDeterministicOrderDetector - INFO - 检测到非确定性顺序: 源码扫描 line 16
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 2.54ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_08_inefficient_aggregation.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - InefficientAggregationDetector - INFO - 检测到低效聚合: iterrows at line 17
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 2.33ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_09_missing_data_profiling.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - MissingDataProfilingDetector - INFO - 检测到缺少数据探索: at line 14
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.17ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_10_redundant_operation.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - RedundantOperationDetector - INFO - 检测到冗余操作: dropna+fillna at line 16
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.57ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_11_excessive_copy.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - ExcessiveCopyDetector - INFO - 检测到过度复制: at line 18
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.52ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_12_module_order_violation.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - ModuleOrderViolationDetector - INFO - 检测到模块顺序违反: at line 26
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.57ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_13_circular_dependency.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - CircularDependencyDetector - INFO - 检测到循环依赖: D:\PipeSmell\dataset\example_13_circular_dependency.py:12
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.36ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_14_improper_module_cohesion.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - ImproperModuleCohesionDetector - INFO - 检测到模块内聚不当: 7 types at line 1
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.12ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_15_pipeline_fragmentation.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - PipelineFragmentationDetector - INFO - 检测到Pipeline碎片化: 11 fragments at line 12
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.37ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_16_unnecessary_materialization.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - UnnecessaryMaterializationDetector - INFO - 检测到不必要物化: at line 20
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.92ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_17_large_dataframe_operation.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - LargeDataFrameOperationDetector - INFO - 检测到大DataFrame操作: at line 20
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.47ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_18_lack_version_control.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - LackOfVersionControlDetector - INFO - 检测到缺少版本控制: at line 1
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 8.79ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_19_clean_pipeline.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 0 个Smell，耗时 4.99ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_20_multiple_smells.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - DataLeakageDetector - INFO - 检测到数据泄露: fit_transform at line 18
+2026-03-22 22:55:40 - MissingEvaluationDetector - INFO - 检测到缺少评估: at line 31
+2026-03-22 22:55:40 - MissingRandomSeedDetector - INFO - 检测到缺少随机种子: train_test_split at line 21
+2026-03-22 22:55:40 - HardcodedParametersDetector - INFO - 检测到硬编码参数: 4 params at line 24
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 4 个Smell，耗时 9.38ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_21_data_leakage_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - DataLeakageDetector - INFO - 检测到数据泄露: fit_transform at line 20
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.49ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_22_missing_random_seed_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - MissingRandomSeedDetector - INFO - 检测到缺少随机种子: train_test_split at line 17
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.95ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_23_missing_validation_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - MissingValidationDetector - INFO - 检测到缺少验证集: at line 17
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.47ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_24_repeated_transform_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - RepeatedTransformDetector - INFO - 检测到重复转换(多缩放器): at line 24
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.95ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_25_missing_evaluation_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - MissingEvaluationDetector - INFO - 检测到缺少评估: at line 20
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.50ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_26_hardcoded_parameters_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - HardcodedParametersDetector - INFO - 检测到硬编码参数: 5 params at line 19
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.99ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_27_nondeterministic_order_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - NonDeterministicOrderDetector - INFO - 检测到非确定性顺序: 源码扫描 line 16
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.32ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_28_inefficient_aggregation_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - InefficientAggregationDetector - INFO - 检测到低效聚合: iterrows at line 17
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.09ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_29_missing_data_profiling_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - MissingDataProfilingDetector - INFO - 检测到缺少数据探索: at line 14
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.82ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_30_redundant_operation_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - RedundantOperationDetector - INFO - 检测到冗余操作: dropna+fillna at line 16
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.91ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_31_excessive_copy_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - ExcessiveCopyDetector - INFO - 检测到过度复制: at line 18
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.61ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_32_module_order_violation_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - ModuleOrderViolationDetector - INFO - 检测到模块顺序违反: at line 24
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.54ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_33_circular_dependency_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - CircularDependencyDetector - INFO - 检测到循环依赖: D:\PipeSmell\dataset\example_33_circular_dependency_b.py:12
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.47ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_34_improper_module_cohesion_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - ImproperModuleCohesionDetector - INFO - 检测到模块内聚不当: 7 types at line 1
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.76ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_35_pipeline_fragmentation_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - PipelineFragmentationDetector - INFO - 检测到Pipeline碎片化: 12 fragments at line 12
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.50ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_36_unnecessary_materialization_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - UnnecessaryMaterializationDetector - INFO - 检测到不必要物化: at line 20
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.76ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_37_large_dataframe_operation_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - LargeDataFrameOperationDetector - INFO - 检测到大DataFrame操作: at line 17
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.08ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_38_lack_version_control_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - LackOfVersionControlDetector - INFO - 检测到缺少版本控制: at line 1
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.56ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_39_clean_pipeline_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 0 个Smell，耗时 3.93ms
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_40_multiple_smells_b.py
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 22:55:40 - DataLeakageDetector - INFO - 检测到数据泄露: fit_transform at line 18
+2026-03-22 22:55:40 - MissingEvaluationDetector - INFO - 检测到缺少评估: at line 31
+2026-03-22 22:55:40 - MissingRandomSeedDetector - INFO - 检测到缺少随机种子: train_test_split at line 21
+2026-03-22 22:55:40 - HardcodedParametersDetector - INFO - 检测到硬编码参数: 4 params at line 24
+2026-03-22 22:55:40 - DetectorRegistry - INFO - 检测完成，共找到 4 个Smell，耗时 3.08ms
+2026-03-22 23:05:13 - DataLeakageDetector - INFO - DataLeakageDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: DATA_LEAKAGE
+2026-03-22 23:05:13 - MissingEvaluationDetector - INFO - MissingEvaluationDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: MISSING_EVALUATION
+2026-03-22 23:05:13 - ModuleOrderViolationDetector - INFO - ModuleOrderViolationDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: MODULE_ORDER_VIOLATION
+2026-03-22 23:05:13 - RepeatedTransformDetector - INFO - RepeatedTransformDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: REPEATED_TRANSFORM
+2026-03-22 23:05:13 - ExcessiveCopyDetector - INFO - ExcessiveCopyDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: EXCESSIVE_COPY
+2026-03-22 23:05:13 - RedundantOperationDetector - INFO - RedundantOperationDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: REDUNDANT_OPERATION
+2026-03-22 23:05:13 - MissingRandomSeedDetector - INFO - MissingRandomSeedDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: MISSING_RANDOM_SEED
+2026-03-22 23:05:13 - MissingValidationDetector - INFO - MissingValidationDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: MISSING_VALIDATION
+2026-03-22 23:05:13 - MissingDataProfilingDetector - INFO - MissingDataProfilingDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: MISSING_DATA_PROFILING
+2026-03-22 23:05:13 - InefficientAggregationDetector - INFO - InefficientAggregationDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: INEFFICIENT_AGGREGATION
+2026-03-22 23:05:13 - UnnecessaryMaterializationDetector - INFO - UnnecessaryMaterializationDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: UNNECESSARY_MATERIALIZATION
+2026-03-22 23:05:13 - LargeDataFrameOperationDetector - INFO - LargeDataFrameOperationDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: LARGE_DATA_FRAME_OPERATION
+2026-03-22 23:05:13 - CircularDependencyDetector - INFO - CircularDependencyDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: CIRCULAR_DEPENDENCY
+2026-03-22 23:05:13 - ImproperModuleCohesionDetector - INFO - ImproperModuleCohesionDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: IMPROPER_MODULE_COHESION
+2026-03-22 23:05:13 - PipelineFragmentationDetector - INFO - PipelineFragmentationDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: PIPELINE_FRAGMENTATION
+2026-03-22 23:05:13 - HardcodedParametersDetector - INFO - HardcodedParametersDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: HARDCODED_PARAMETERS
+2026-03-22 23:05:13 - LackOfVersionControlDetector - INFO - LackOfVersionControlDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: LACK_OF_VERSION_CONTROL
+2026-03-22 23:05:13 - NonDeterministicOrderDetector - INFO - NonDeterministicOrderDetector初始化完成
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 已注册检测器: NON_DETERMINISTIC_ORDER
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_01_data_leakage.py
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:13 - DataLeakageDetector - INFO - 检测到数据泄露: fit_transform at line 20
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 2.33ms
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_02_missing_random_seed.py
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:13 - MissingRandomSeedDetector - INFO - 检测到缺少随机种子: train_test_split at line 17
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.47ms
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_03_missing_validation.py
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:13 - MissingValidationDetector - INFO - 检测到缺少验证集: at line 17
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.12ms
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_04_repeated_transform.py
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:13 - RepeatedTransformDetector - INFO - 检测到重复转换(多缩放器): at line 24
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.17ms
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_05_missing_evaluation.py
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:13 - MissingEvaluationDetector - INFO - 检测到缺少评估: at line 20
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.03ms
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_06_hardcoded_parameters.py
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:13 - HardcodedParametersDetector - INFO - 检测到硬编码参数: 5 params at line 19
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.03ms
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_07_nondeterministic_order.py
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:13 - NonDeterministicOrderDetector - INFO - 检测到非确定性顺序: 源码扫描 line 16
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.27ms
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_08_inefficient_aggregation.py
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:13 - InefficientAggregationDetector - INFO - 检测到低效聚合: iterrows at line 17
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.06ms
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_09_missing_data_profiling.py
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:13 - MissingDataProfilingDetector - INFO - 检测到缺少数据探索: at line 14
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.03ms
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_10_redundant_operation.py
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:13 - RedundantOperationDetector - INFO - 检测到冗余操作: dropna+fillna at line 16
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.84ms
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_11_excessive_copy.py
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:13 - ExcessiveCopyDetector - INFO - 检测到过度复制: at line 18
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.14ms
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_12_module_order_violation.py
+2026-03-22 23:05:13 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - ModuleOrderViolationDetector - INFO - 检测到模块顺序违反: at line 26
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 7.49ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_13_circular_dependency.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - CircularDependencyDetector - INFO - 检测到循环依赖: D:\PipeSmell\dataset\example_13_circular_dependency.py:12
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.17ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_14_improper_module_cohesion.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - ImproperModuleCohesionDetector - INFO - 检测到模块内聚不当: 7 types at line 1
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.47ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_15_pipeline_fragmentation.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - PipelineFragmentationDetector - INFO - 检测到Pipeline碎片化: 11 fragments at line 12
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.98ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_16_unnecessary_materialization.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - UnnecessaryMaterializationDetector - INFO - 检测到不必要物化: at line 20
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.34ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_17_large_dataframe_operation.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - LargeDataFrameOperationDetector - INFO - 检测到大DataFrame操作: at line 20
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.42ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_18_lack_version_control.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - LackOfVersionControlDetector - INFO - 检测到缺少版本控制: at line 1
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.38ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_19_clean_pipeline.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 0 个Smell，耗时 4.26ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_20_multiple_smells.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - DataLeakageDetector - INFO - 检测到数据泄露: fit_transform at line 18
+2026-03-22 23:05:14 - MissingEvaluationDetector - INFO - 检测到缺少评估: at line 31
+2026-03-22 23:05:14 - MissingRandomSeedDetector - INFO - 检测到缺少随机种子: train_test_split at line 21
+2026-03-22 23:05:14 - HardcodedParametersDetector - INFO - 检测到硬编码参数: 4 params at line 24
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 4 个Smell，耗时 3.32ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_21_data_leakage_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - DataLeakageDetector - INFO - 检测到数据泄露: fit_transform at line 20
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.46ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_22_missing_random_seed_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - MissingRandomSeedDetector - INFO - 检测到缺少随机种子: train_test_split at line 17
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.98ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_23_missing_validation_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - MissingValidationDetector - INFO - 检测到缺少验证集: at line 17
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 2.78ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_24_repeated_transform_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - RepeatedTransformDetector - INFO - 检测到重复转换(多缩放器): at line 24
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.28ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_25_missing_evaluation_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - MissingEvaluationDetector - INFO - 检测到缺少评估: at line 20
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.25ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_26_hardcoded_parameters_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - HardcodedParametersDetector - INFO - 检测到硬编码参数: 5 params at line 19
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.14ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_27_nondeterministic_order_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - NonDeterministicOrderDetector - INFO - 检测到非确定性顺序: 源码扫描 line 16
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.11ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_28_inefficient_aggregation_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - InefficientAggregationDetector - INFO - 检测到低效聚合: iterrows at line 17
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.10ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_29_missing_data_profiling_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - MissingDataProfilingDetector - INFO - 检测到缺少数据探索: at line 14
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.70ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_30_redundant_operation_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - RedundantOperationDetector - INFO - 检测到冗余操作: dropna+fillna at line 16
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.09ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_31_excessive_copy_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - ExcessiveCopyDetector - INFO - 检测到过度复制: at line 18
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.59ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_32_module_order_violation_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - ModuleOrderViolationDetector - INFO - 检测到模块顺序违反: at line 24
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.15ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_33_circular_dependency_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - CircularDependencyDetector - INFO - 检测到循环依赖: D:\PipeSmell\dataset\example_33_circular_dependency_b.py:12
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.31ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_34_improper_module_cohesion_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - ImproperModuleCohesionDetector - INFO - 检测到模块内聚不当: 7 types at line 1
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.98ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_35_pipeline_fragmentation_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - PipelineFragmentationDetector - INFO - 检测到Pipeline碎片化: 12 fragments at line 12
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.83ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_36_unnecessary_materialization_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - UnnecessaryMaterializationDetector - INFO - 检测到不必要物化: at line 20
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.19ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_37_large_dataframe_operation_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - LargeDataFrameOperationDetector - INFO - 检测到大DataFrame操作: at line 17
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 2.99ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_38_lack_version_control_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - LackOfVersionControlDetector - INFO - 检测到缺少版本控制: at line 1
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.24ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_39_clean_pipeline_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 0 个Smell，耗时 4.06ms
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_40_multiple_smells_b.py
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:05:14 - DataLeakageDetector - INFO - 检测到数据泄露: fit_transform at line 18
+2026-03-22 23:05:14 - MissingEvaluationDetector - INFO - 检测到缺少评估: at line 31
+2026-03-22 23:05:14 - MissingRandomSeedDetector - INFO - 检测到缺少随机种子: train_test_split at line 21
+2026-03-22 23:05:14 - HardcodedParametersDetector - INFO - 检测到硬编码参数: 4 params at line 24
+2026-03-22 23:05:14 - DetectorRegistry - INFO - 检测完成，共找到 4 个Smell，耗时 5.54ms
+2026-03-22 23:12:50 - DataLeakageDetector - INFO - DataLeakageDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: DATA_LEAKAGE
+2026-03-22 23:12:50 - MissingEvaluationDetector - INFO - MissingEvaluationDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: MISSING_EVALUATION
+2026-03-22 23:12:50 - ModuleOrderViolationDetector - INFO - ModuleOrderViolationDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: MODULE_ORDER_VIOLATION
+2026-03-22 23:12:50 - RepeatedTransformDetector - INFO - RepeatedTransformDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: REPEATED_TRANSFORM
+2026-03-22 23:12:50 - ExcessiveCopyDetector - INFO - ExcessiveCopyDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: EXCESSIVE_COPY
+2026-03-22 23:12:50 - RedundantOperationDetector - INFO - RedundantOperationDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: REDUNDANT_OPERATION
+2026-03-22 23:12:50 - MissingRandomSeedDetector - INFO - MissingRandomSeedDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: MISSING_RANDOM_SEED
+2026-03-22 23:12:50 - MissingValidationDetector - INFO - MissingValidationDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: MISSING_VALIDATION
+2026-03-22 23:12:50 - MissingDataProfilingDetector - INFO - MissingDataProfilingDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: MISSING_DATA_PROFILING
+2026-03-22 23:12:50 - InefficientAggregationDetector - INFO - InefficientAggregationDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: INEFFICIENT_AGGREGATION
+2026-03-22 23:12:50 - UnnecessaryMaterializationDetector - INFO - UnnecessaryMaterializationDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: UNNECESSARY_MATERIALIZATION
+2026-03-22 23:12:50 - LargeDataFrameOperationDetector - INFO - LargeDataFrameOperationDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: LARGE_DATA_FRAME_OPERATION
+2026-03-22 23:12:50 - CircularDependencyDetector - INFO - CircularDependencyDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: CIRCULAR_DEPENDENCY
+2026-03-22 23:12:50 - ImproperModuleCohesionDetector - INFO - ImproperModuleCohesionDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: IMPROPER_MODULE_COHESION
+2026-03-22 23:12:50 - PipelineFragmentationDetector - INFO - PipelineFragmentationDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: PIPELINE_FRAGMENTATION
+2026-03-22 23:12:50 - HardcodedParametersDetector - INFO - HardcodedParametersDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: HARDCODED_PARAMETERS
+2026-03-22 23:12:50 - LackOfVersionControlDetector - INFO - LackOfVersionControlDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: LACK_OF_VERSION_CONTROL
+2026-03-22 23:12:50 - NonDeterministicOrderDetector - INFO - NonDeterministicOrderDetector初始化完成
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 已注册检测器: NON_DETERMINISTIC_ORDER
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_01_data_leakage.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - DataLeakageDetector - INFO - 检测到数据泄露: fit_transform at line 20
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.27ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_02_missing_random_seed.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - MissingRandomSeedDetector - INFO - 检测到缺少随机种子: train_test_split at line 17
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.50ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_03_missing_validation.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - MissingValidationDetector - INFO - 检测到缺少验证集: at line 17
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 2.33ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_04_repeated_transform.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - RepeatedTransformDetector - INFO - 检测到重复转换(多缩放器): at line 24
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.10ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_05_missing_evaluation.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - MissingEvaluationDetector - INFO - 检测到缺少评估: at line 20
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.95ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_06_hardcoded_parameters.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - HardcodedParametersDetector - INFO - 检测到硬编码参数: 5 params at line 19
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.53ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_07_nondeterministic_order.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - NonDeterministicOrderDetector - INFO - 检测到非确定性顺序: 源码扫描 line 16
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.26ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_08_inefficient_aggregation.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - InefficientAggregationDetector - INFO - 检测到低效聚合: iterrows at line 17
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.68ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_09_missing_data_profiling.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - MissingDataProfilingDetector - INFO - 检测到缺少数据探索: at line 14
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.98ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_10_redundant_operation.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - RedundantOperationDetector - INFO - 检测到冗余操作: dropna+fillna at line 16
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.98ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_11_excessive_copy.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - ExcessiveCopyDetector - INFO - 检测到过度复制: at line 18
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 7.28ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_12_module_order_violation.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - ModuleOrderViolationDetector - INFO - 检测到模块顺序违反: at line 26
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.88ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_13_circular_dependency.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - CircularDependencyDetector - INFO - 检测到循环依赖: D:\PipeSmell\dataset\example_13_circular_dependency.py:12
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.68ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_14_improper_module_cohesion.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - ImproperModuleCohesionDetector - INFO - 检测到模块内聚不当: 7 types at line 1
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 10.90ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_15_pipeline_fragmentation.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - PipelineFragmentationDetector - INFO - 检测到Pipeline碎片化: 11 fragments at line 12
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 8.84ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_16_unnecessary_materialization.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - UnnecessaryMaterializationDetector - INFO - 检测到不必要物化: at line 20
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 10.10ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_17_large_dataframe_operation.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - LargeDataFrameOperationDetector - INFO - 检测到大DataFrame操作: at line 20
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.98ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_18_lack_version_control.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - LackOfVersionControlDetector - INFO - 检测到缺少版本控制: at line 1
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.48ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_19_clean_pipeline.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 0 个Smell，耗时 5.73ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_20_multiple_smells.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - DataLeakageDetector - INFO - 检测到数据泄露: fit_transform at line 18
+2026-03-22 23:12:50 - MissingEvaluationDetector - INFO - 检测到缺少评估: at line 31
+2026-03-22 23:12:50 - MissingRandomSeedDetector - INFO - 检测到缺少随机种子: train_test_split at line 21
+2026-03-22 23:12:50 - HardcodedParametersDetector - INFO - 检测到硬编码参数: 4 params at line 24
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 4 个Smell，耗时 6.30ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_21_data_leakage_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - DataLeakageDetector - INFO - 检测到数据泄露: fit_transform at line 20
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.01ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_22_missing_random_seed_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - MissingRandomSeedDetector - INFO - 检测到缺少随机种子: train_test_split at line 17
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.98ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_23_missing_validation_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - MissingValidationDetector - INFO - 检测到缺少验证集: at line 17
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.40ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_24_repeated_transform_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - RepeatedTransformDetector - INFO - 检测到重复转换(多缩放器): at line 24
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.49ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_25_missing_evaluation_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - MissingEvaluationDetector - INFO - 检测到缺少评估: at line 20
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.32ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_26_hardcoded_parameters_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - HardcodedParametersDetector - INFO - 检测到硬编码参数: 5 params at line 19
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 2.99ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_27_nondeterministic_order_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - NonDeterministicOrderDetector - INFO - 检测到非确定性顺序: 源码扫描 line 16
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.87ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_28_inefficient_aggregation_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - InefficientAggregationDetector - INFO - 检测到低效聚合: iterrows at line 17
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.30ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_29_missing_data_profiling_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - MissingDataProfilingDetector - INFO - 检测到缺少数据探索: at line 14
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 4.38ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_30_redundant_operation_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - RedundantOperationDetector - INFO - 检测到冗余操作: dropna+fillna at line 16
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.49ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_31_excessive_copy_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - ExcessiveCopyDetector - INFO - 检测到过度复制: at line 18
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.57ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_32_module_order_violation_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - ModuleOrderViolationDetector - INFO - 检测到模块顺序违反: at line 24
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.82ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_33_circular_dependency_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - CircularDependencyDetector - INFO - 检测到循环依赖: D:\PipeSmell\dataset\example_33_circular_dependency_b.py:12
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.44ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_34_improper_module_cohesion_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - ImproperModuleCohesionDetector - INFO - 检测到模块内聚不当: 7 types at line 1
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 8.98ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_35_pipeline_fragmentation_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - PipelineFragmentationDetector - INFO - 检测到Pipeline碎片化: 12 fragments at line 12
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 8.90ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_36_unnecessary_materialization_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - UnnecessaryMaterializationDetector - INFO - 检测到不必要物化: at line 20
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 3.41ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_37_large_dataframe_operation_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - LargeDataFrameOperationDetector - INFO - 检测到大DataFrame操作: at line 17
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 5.27ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_38_lack_version_control_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - LackOfVersionControlDetector - INFO - 检测到缺少版本控制: at line 1
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 1 个Smell，耗时 6.55ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_39_clean_pipeline_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 0 个Smell，耗时 4.60ms
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 开始检测Pipeline: D:\PipeSmell\dataset\example_40_multiple_smells_b.py
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 使用 18 个检测器
+2026-03-22 23:12:50 - DataLeakageDetector - INFO - 检测到数据泄露: fit_transform at line 18
+2026-03-22 23:12:50 - MissingEvaluationDetector - INFO - 检测到缺少评估: at line 31
+2026-03-22 23:12:50 - MissingRandomSeedDetector - INFO - 检测到缺少随机种子: train_test_split at line 21
+2026-03-22 23:12:50 - HardcodedParametersDetector - INFO - 检测到硬编码参数: 4 params at line 24
+2026-03-22 23:12:50 - DetectorRegistry - INFO - 检测完成，共找到 4 个Smell，耗时 5.98ms
+2026-03-22 23:12:54 - DataLeakageDetector - INFO - DataLeakageDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: DATA_LEAKAGE
+2026-03-22 23:12:54 - MissingEvaluationDetector - INFO - MissingEvaluationDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: MISSING_EVALUATION
+2026-03-22 23:12:54 - ModuleOrderViolationDetector - INFO - ModuleOrderViolationDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: MODULE_ORDER_VIOLATION
+2026-03-22 23:12:54 - RepeatedTransformDetector - INFO - RepeatedTransformDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: REPEATED_TRANSFORM
+2026-03-22 23:12:54 - ExcessiveCopyDetector - INFO - ExcessiveCopyDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: EXCESSIVE_COPY
+2026-03-22 23:12:54 - RedundantOperationDetector - INFO - RedundantOperationDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: REDUNDANT_OPERATION
+2026-03-22 23:12:54 - MissingRandomSeedDetector - INFO - MissingRandomSeedDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: MISSING_RANDOM_SEED
+2026-03-22 23:12:54 - MissingValidationDetector - INFO - MissingValidationDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: MISSING_VALIDATION
+2026-03-22 23:12:54 - MissingDataProfilingDetector - INFO - MissingDataProfilingDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: MISSING_DATA_PROFILING
+2026-03-22 23:12:54 - InefficientAggregationDetector - INFO - InefficientAggregationDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: INEFFICIENT_AGGREGATION
+2026-03-22 23:12:54 - UnnecessaryMaterializationDetector - INFO - UnnecessaryMaterializationDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: UNNECESSARY_MATERIALIZATION
+2026-03-22 23:12:54 - LargeDataFrameOperationDetector - INFO - LargeDataFrameOperationDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: LARGE_DATA_FRAME_OPERATION
+2026-03-22 23:12:54 - CircularDependencyDetector - INFO - CircularDependencyDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: CIRCULAR_DEPENDENCY
+2026-03-22 23:12:54 - ImproperModuleCohesionDetector - INFO - ImproperModuleCohesionDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: IMPROPER_MODULE_COHESION
+2026-03-22 23:12:54 - PipelineFragmentationDetector - INFO - PipelineFragmentationDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: PIPELINE_FRAGMENTATION
+2026-03-22 23:12:54 - HardcodedParametersDetector - INFO - HardcodedParametersDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: HARDCODED_PARAMETERS
+2026-03-22 23:12:54 - LackOfVersionControlDetector - INFO - LackOfVersionControlDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: LACK_OF_VERSION_CONTROL
+2026-03-22 23:12:54 - NonDeterministicOrderDetector - INFO - NonDeterministicOrderDetector初始化完成
+2026-03-22 23:12:54 - DetectorRegistry - INFO - 已注册检测器: NON_DETERMINISTIC_ORDER

@@ -119,3 +119,39 @@
 2026-03-22 16:39:58 - Evaluator - INFO - 评估完成: P=0.026, R=0.091, F1=0.040
 2026-03-22 16:39:58 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq2\Baseline-PMD
 2026-03-22 16:39:58 - Evaluator - INFO - 方法比较结果已保存到: experiments\results\rq2\method_comparison.json
+2026-03-22 22:55:40 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 22:55:40 - Evaluator - INFO - 预测数量: 44, Ground Truth数量: 44
+2026-03-22 22:55:40 - Evaluator - INFO - 匹配完成: 44 个成功匹配
+2026-03-22 22:55:40 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 22:55:40 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1_doubled_test\Pipeline-aware
+2026-03-22 23:05:14 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 23:05:14 - Evaluator - INFO - 预测数量: 44, Ground Truth数量: 44
+2026-03-22 23:05:14 - Evaluator - INFO - 匹配完成: 44 个成功匹配
+2026-03-22 23:05:14 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 23:05:14 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq1\Pipeline-aware
+2026-03-22 23:12:54 - Evaluator - INFO - 开始评估方法: Pipeline-aware
+2026-03-22 23:12:54 - Evaluator - INFO - 预测数量: 44, Ground Truth数量: 44
+2026-03-22 23:12:54 - Evaluator - INFO - 匹配完成: 44 个成功匹配
+2026-03-22 23:12:54 - Evaluator - INFO - 评估完成: P=1.000, R=1.000, F1=1.000
+2026-03-22 23:12:54 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq2\Pipeline-aware
+2026-03-22 23:12:54 - Evaluator - INFO - 开始评估方法: Baseline-Keyword
+2026-03-22 23:12:54 - Evaluator - INFO - 预测数量: 72, Ground Truth数量: 44
+2026-03-22 23:12:54 - Evaluator - INFO - 匹配完成: 8 个成功匹配
+2026-03-22 23:12:54 - Evaluator - INFO - 评估完成: P=0.111, R=0.182, F1=0.138
+2026-03-22 23:12:54 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq2\Baseline-Keyword
+2026-03-22 23:12:54 - Evaluator - INFO - 开始评估方法: Baseline-Heuristic
+2026-03-22 23:12:54 - Evaluator - INFO - 预测数量: 56, Ground Truth数量: 44
+2026-03-22 23:12:54 - Evaluator - INFO - 匹配完成: 6 个成功匹配
+2026-03-22 23:12:54 - Evaluator - INFO - 评估完成: P=0.111, R=0.136, F1=0.122
+2026-03-22 23:12:54 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq2\Baseline-Heuristic
+2026-03-22 23:12:54 - Evaluator - INFO - 开始评估方法: Baseline-SonarQube
+2026-03-22 23:12:54 - Evaluator - INFO - 预测数量: 112, Ground Truth数量: 44
+2026-03-22 23:12:54 - Evaluator - INFO - 匹配完成: 3 个成功匹配
+2026-03-22 23:12:54 - Evaluator - INFO - 评估完成: P=0.027, R=0.068, F1=0.038
+2026-03-22 23:12:54 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq2\Baseline-SonarQube
+2026-03-22 23:12:54 - Evaluator - INFO - 开始评估方法: Baseline-PMD
+2026-03-22 23:12:54 - Evaluator - INFO - 预测数量: 150, Ground Truth数量: 44
+2026-03-22 23:12:54 - Evaluator - INFO - 匹配完成: 4 个成功匹配
+2026-03-22 23:12:54 - Evaluator - INFO - 评估完成: P=0.027, R=0.091, F1=0.041
+2026-03-22 23:12:54 - Evaluator - INFO - 评估结果已保存到: experiments\results\rq2\Baseline-PMD
+2026-03-22 23:12:54 - Evaluator - INFO - 方法比较结果已保存到: experiments\results\rq2\method_comparison.json

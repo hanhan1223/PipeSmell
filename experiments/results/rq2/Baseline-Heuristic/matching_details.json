@@ -1,7 +1,7 @@
 {
-  "total_matches": 3,
-  "total_false_positives": 25,
-  "total_false_negatives": 19,
+  "total_matches": 6,
+  "total_false_positives": 48,
+  "total_false_negatives": 38,
   "matches": [
     {
       "prediction_id": "D:\\PipeSmell\\dataset\\example_02_missing_random_seed.py:17:MISSING_RANDOM_SEED",
@@ -20,6 +20,24 @@
       "ground_truth_id": "D:\\PipeSmell\\dataset\\example_20_multiple_smells.py:16:MISSING_RANDOM_SEED",
       "smell_type": "MISSING_RANDOM_SEED",
       "match_score": 0.4444444444444444
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_22_missing_random_seed_b.py:17:MISSING_RANDOM_SEED",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_22_missing_random_seed_b.py:17:MISSING_RANDOM_SEED",
+      "smell_type": "MISSING_RANDOM_SEED",
+      "match_score": 1.0
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_31_excessive_copy_b.py:16:EXCESSIVE_COPY",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_31_excessive_copy_b.py:16:EXCESSIVE_COPY",
+      "smell_type": "EXCESSIVE_COPY",
+      "match_score": 1.0
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_40_multiple_smells_b.py:21:MISSING_RANDOM_SEED",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_40_multiple_smells_b.py:21:MISSING_RANDOM_SEED",
+      "smell_type": "MISSING_RANDOM_SEED",
+      "match_score": 1.0
     }
   ],
   "false_positives": [
@@ -247,6 +265,213 @@
       "severity": "LOW",
       "description": "检测到 MISSING_DATA_PROFILING",
       "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_21_data_leakage_b.py:23:MISSING_RANDOM_SEED",
+      "smell_type": "MISSING_RANDOM_SEED",
+      "file_path": "D:\\PipeSmell\\dataset\\example_21_data_leakage_b.py",
+      "line_number": 23,
+      "severity": "HIGH",
+      "description": "通过启发式规则检测到: MISSING_RANDOM_SEED",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_21_data_leakage_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_21_data_leakage_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_22_missing_random_seed_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_22_missing_random_seed_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_23_missing_validation_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_23_missing_validation_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_24_repeated_transform_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_24_repeated_transform_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_25_missing_evaluation_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_25_missing_evaluation_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_26_hardcoded_parameters_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_26_hardcoded_parameters_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_27_nondeterministic_order_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_27_nondeterministic_order_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_28_inefficient_aggregation_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_28_inefficient_aggregation_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_29_missing_data_profiling_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_29_missing_data_profiling_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_30_redundant_operation_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_30_redundant_operation_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_31_excessive_copy_b.py:17:EXCESSIVE_COPY",
+      "smell_type": "EXCESSIVE_COPY",
+      "file_path": "D:\\PipeSmell\\dataset\\example_31_excessive_copy_b.py",
+      "line_number": 17,
+      "severity": "LOW",
+      "description": "通过启发式规则检测到: EXCESSIVE_COPY",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_31_excessive_copy_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_31_excessive_copy_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_32_module_order_violation_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_32_module_order_violation_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_33_circular_dependency_b.py:14:EXCESSIVE_COPY",
+      "smell_type": "EXCESSIVE_COPY",
+      "file_path": "D:\\PipeSmell\\dataset\\example_33_circular_dependency_b.py",
+      "line_number": 14,
+      "severity": "LOW",
+      "description": "通过启发式规则检测到: EXCESSIVE_COPY",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_33_circular_dependency_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_33_circular_dependency_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_34_improper_module_cohesion_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_34_improper_module_cohesion_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_35_pipeline_fragmentation_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_35_pipeline_fragmentation_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_36_unnecessary_materialization_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_36_unnecessary_materialization_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_37_large_dataframe_operation_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_37_large_dataframe_operation_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_38_lack_version_control_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_38_lack_version_control_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_39_clean_pipeline_b.py:25:MISSING_RANDOM_SEED",
+      "smell_type": "MISSING_RANDOM_SEED",
+      "file_path": "D:\\PipeSmell\\dataset\\example_39_clean_pipeline_b.py",
+      "line_number": 25,
+      "severity": "HIGH",
+      "description": "通过启发式规则检测到: MISSING_RANDOM_SEED",
+      "affected_nodes": []
+    },
+    {
+      "id": "D:\\PipeSmell\\dataset\\example_40_multiple_smells_b.py:0:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "file_path": "D:\\PipeSmell\\dataset\\example_40_multiple_smells_b.py",
+      "line_number": 0,
+      "severity": "LOW",
+      "description": "检测到 MISSING_DATA_PROFILING",
+      "affected_nodes": []
     }
   ],
   "false_negatives": [
@@ -439,6 +664,196 @@
       "description": "没有评估步骤",
       "affected_nodes": [],
       "id": "D:\\PipeSmell\\dataset\\example_20_multiple_smells.py:28:MISSING_EVALUATION"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_21_data_leakage_b.py",
+      "smell_type": "DATA_LEAKAGE",
+      "line_number": 20,
+      "line_end": 20,
+      "severity": "CRITICAL",
+      "description": "在train_test_split之前对整个数据集执行MinMaxScaler.fit_transform()",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_21_data_leakage_b.py:20:DATA_LEAKAGE"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_23_missing_validation_b.py",
+      "smell_type": "MISSING_VALIDATION",
+      "line_number": 17,
+      "line_end": 21,
+      "severity": "CRITICAL",
+      "description": "没有划分训练集和测试集，直接在全部数据上训练和评估",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_23_missing_validation_b.py:17:MISSING_VALIDATION"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_24_repeated_transform_b.py",
+      "smell_type": "REPEATED_TRANSFORM",
+      "line_number": 24,
+      "line_end": 25,
+      "severity": "MEDIUM",
+      "description": "对同一数据链使用RobustScaler与StandardScaler两次缩放",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_24_repeated_transform_b.py:24:REPEATED_TRANSFORM"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_25_missing_evaluation_b.py",
+      "smell_type": "MISSING_EVALUATION",
+      "line_number": 20,
+      "line_end": 24,
+      "severity": "HIGH",
+      "description": "有模型训练但没有调用score()或任何评估指标",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_25_missing_evaluation_b.py:20:MISSING_EVALUATION"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_26_hardcoded_parameters_b.py",
+      "smell_type": "HARDCODED_PARAMETERS",
+      "line_number": 19,
+      "line_end": 26,
+      "severity": "MEDIUM",
+      "description": "GradientBoostingClassifier参数硬编码",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_26_hardcoded_parameters_b.py:19:HARDCODED_PARAMETERS"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_27_nondeterministic_order_b.py",
+      "smell_type": "NON_DETERMINISTIC_ORDER",
+      "line_number": 16,
+      "line_end": 16,
+      "severity": "LOW",
+      "description": "将dict键转为list，迭代顺序存在不确定性",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_27_nondeterministic_order_b.py:16:NON_DETERMINISTIC_ORDER"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_28_inefficient_aggregation_b.py",
+      "smell_type": "INEFFICIENT_AGGREGATION",
+      "line_number": 16,
+      "line_end": 19,
+      "severity": "MEDIUM",
+      "description": "使用循环逐行计算均值，而非向量化操作",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_28_inefficient_aggregation_b.py:16:INEFFICIENT_AGGREGATION"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_29_missing_data_profiling_b.py",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "line_number": 14,
+      "line_end": 14,
+      "severity": "LOW",
+      "description": "加载数据后没有进行head/describe等数据探索",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_29_missing_data_profiling_b.py:14:MISSING_DATA_PROFILING"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_30_redundant_operation_b.py",
+      "smell_type": "REDUNDANT_OPERATION",
+      "line_number": 15,
+      "line_end": 16,
+      "severity": "MEDIUM",
+      "description": "dropna后立即fillna，操作效果互相抵消",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_30_redundant_operation_b.py:15:REDUNDANT_OPERATION"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_32_module_order_violation_b.py",
+      "smell_type": "MODULE_ORDER_VIOLATION",
+      "line_number": 21,
+      "line_end": 26,
+      "severity": "MEDIUM",
+      "description": "特征选择应在标准化之前进行",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_32_module_order_violation_b.py:21:MODULE_ORDER_VIOLATION"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_33_circular_dependency_b.py",
+      "smell_type": "CIRCULAR_DEPENDENCY",
+      "line_number": 12,
+      "line_end": 21,
+      "severity": "HIGH",
+      "description": "process_data_a和process_data_b互相依赖",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_33_circular_dependency_b.py:12:CIRCULAR_DEPENDENCY"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_34_improper_module_cohesion_b.py",
+      "smell_type": "IMPROPER_MODULE_COHESION",
+      "line_number": 1,
+      "line_end": 52,
+      "severity": "MEDIUM",
+      "description": "一个代码块包含数据清洗、可视化、模型训练、参数调优多种操作",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_34_improper_module_cohesion_b.py:1:IMPROPER_MODULE_COHESION"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_35_pipeline_fragmentation_b.py",
+      "smell_type": "PIPELINE_FRAGMENTATION",
+      "line_number": 12,
+      "line_end": 24,
+      "severity": "LOW",
+      "description": "包含大量短小的操作链，每个操作都单独一行",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_35_pipeline_fragmentation_b.py:12:PIPELINE_FRAGMENTATION"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_36_unnecessary_materialization_b.py",
+      "smell_type": "UNNECESSARY_MATERIALIZATION",
+      "line_number": 16,
+      "line_end": 32,
+      "severity": "LOW",
+      "description": "频繁保存中间结果到CSV文件",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_36_unnecessary_materialization_b.py:16:UNNECESSARY_MATERIALIZATION"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_37_large_dataframe_operation_b.py",
+      "smell_type": "LARGE_DATA_FRAME_OPERATION",
+      "line_number": 17,
+      "line_end": 19,
+      "severity": "MEDIUM",
+      "description": "对大DataFrame使用iterrows()逐行遍历",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_37_large_dataframe_operation_b.py:17:LARGE_DATA_FRAME_OPERATION"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_38_lack_version_control_b.py",
+      "smell_type": "LACK_OF_VERSION_CONTROL",
+      "line_number": 1,
+      "line_end": 40,
+      "severity": "MEDIUM",
+      "description": "没有requirements.txt记录依赖版本",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_38_lack_version_control_b.py:1:LACK_OF_VERSION_CONTROL"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_40_multiple_smells_b.py",
+      "smell_type": "DATA_LEAKAGE",
+      "line_number": 17,
+      "line_end": 18,
+      "severity": "CRITICAL",
+      "description": "在划分前对整个数据集标准化",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_40_multiple_smells_b.py:17:DATA_LEAKAGE"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_40_multiple_smells_b.py",
+      "smell_type": "HARDCODED_PARAMETERS",
+      "line_number": 24,
+      "line_end": 29,
+      "severity": "MEDIUM",
+      "description": "LogisticRegression参数硬编码",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_40_multiple_smells_b.py:24:HARDCODED_PARAMETERS"
+    },
+    {
+      "file_path": "D:\\PipeSmell\\dataset\\example_40_multiple_smells_b.py",
+      "smell_type": "MISSING_EVALUATION",
+      "line_number": 31,
+      "line_end": 32,
+      "severity": "HIGH",
+      "description": "没有评估步骤",
+      "affected_nodes": [],
+      "id": "D:\\PipeSmell\\dataset\\example_40_multiple_smells_b.py:31:MISSING_EVALUATION"
     }
   ]
 }

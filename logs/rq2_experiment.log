@@ -105,3 +105,82 @@ Pipeline-aware独有的Smell类型: 11
 2026-03-22 16:39:58 - RQ2 - INFO - ================================================================================
 2026-03-22 16:39:58 - RQ2 - INFO - RQ2实验完成
 2026-03-22 16:39:58 - RQ2 - INFO - ================================================================================
+2026-03-22 23:12:50 - RQ2 - INFO - ================================================================================
+2026-03-22 23:12:50 - RQ2 - INFO - 开始RQ2实验：检测能力对比
+2026-03-22 23:12:50 - RQ2 - INFO - ================================================================================
+2026-03-22 23:12:50 - RQ2 - INFO - 加载Ground Truth数据...
+2026-03-22 23:12:50 - RQ2 - INFO - 加载了 44 个Ground Truth Smell
+2026-03-22 23:12:50 - RQ2 - INFO - 需要检测 40 个文件
+2026-03-22 23:12:50 - RQ2 - INFO - 
+运行所有检测方法...
+2026-03-22 23:12:50 - RQ2 - INFO - 运行Pipeline-aware方法...
+2026-03-22 23:12:50 - RQ2 - INFO - Pipeline-aware检测到 44 个Smell
+2026-03-22 23:12:50 - RQ2 - INFO - 运行Keyword基线方法...
+2026-03-22 23:12:54 - RQ2 - INFO - Keyword基线检测到 72 个Smell
+2026-03-22 23:12:54 - RQ2 - INFO - 运行Heuristic基线方法...
+2026-03-22 23:12:54 - RQ2 - INFO - Heuristic基线检测到 56 个Smell
+2026-03-22 23:12:54 - RQ2 - INFO - 运行SonarQube基线方法...
+2026-03-22 23:12:54 - RQ2 - INFO - SonarQube基线检测到 112 个Smell
+2026-03-22 23:12:54 - RQ2 - INFO - 运行PMD基线方法...
+2026-03-22 23:12:54 - RQ2 - INFO - PMD基线检测到 150 个Smell
+2026-03-22 23:12:54 - RQ2 - INFO - 
+评估所有方法...
+2026-03-22 23:12:54 - RQ2 - INFO - 
+评估 Pipeline-aware...
+2026-03-22 23:12:54 - RQ2 - INFO -   Precision: 1.0000
+2026-03-22 23:12:54 - RQ2 - INFO -   Recall: 1.0000
+2026-03-22 23:12:54 - RQ2 - INFO -   F1-score: 1.0000
+2026-03-22 23:12:54 - RQ2 - INFO - 
+评估 Baseline-Keyword...
+2026-03-22 23:12:54 - RQ2 - INFO -   Precision: 0.1111
+2026-03-22 23:12:54 - RQ2 - INFO -   Recall: 0.1818
+2026-03-22 23:12:54 - RQ2 - INFO -   F1-score: 0.1379
+2026-03-22 23:12:54 - RQ2 - INFO - 
+评估 Baseline-Heuristic...
+2026-03-22 23:12:54 - RQ2 - INFO -   Precision: 0.1111
+2026-03-22 23:12:54 - RQ2 - INFO -   Recall: 0.1364
+2026-03-22 23:12:54 - RQ2 - INFO -   F1-score: 0.1224
+2026-03-22 23:12:54 - RQ2 - INFO - 
+评估 Baseline-SonarQube...
+2026-03-22 23:12:54 - RQ2 - INFO -   Precision: 0.0268
+2026-03-22 23:12:54 - RQ2 - INFO -   Recall: 0.0682
+2026-03-22 23:12:54 - RQ2 - INFO -   F1-score: 0.0385
+2026-03-22 23:12:54 - RQ2 - INFO - 
+评估 Baseline-PMD...
+2026-03-22 23:12:54 - RQ2 - INFO -   Precision: 0.0267
+2026-03-22 23:12:54 - RQ2 - INFO -   Recall: 0.0909
+2026-03-22 23:12:54 - RQ2 - INFO -   F1-score: 0.0412
+2026-03-22 23:12:54 - RQ2 - INFO - 
+生成方法比较...
+2026-03-22 23:12:54 - RQ2 - INFO - 
+方法排名（按F1分数）:
+2026-03-22 23:12:54 - RQ2 - INFO - 1. Pipeline-aware: F1=1.0000, P=1.0000, R=1.0000
+2026-03-22 23:12:54 - RQ2 - INFO - 2. Baseline-Keyword: F1=0.1379, P=0.1111, R=0.1818
+2026-03-22 23:12:54 - RQ2 - INFO - 3. Baseline-Heuristic: F1=0.1224, P=0.1111, R=0.1364
+2026-03-22 23:12:54 - RQ2 - INFO - 4. Baseline-PMD: F1=0.0412, P=0.0267, R=0.0909
+2026-03-22 23:12:54 - RQ2 - INFO - 5. Baseline-SonarQube: F1=0.0385, P=0.0268, R=0.0682
+2026-03-22 23:12:54 - RQ2 - INFO - 
+分析覆盖能力...
+2026-03-22 23:12:54 - RQ2 - INFO - 
+Pipeline-aware独有的Smell类型: 11
+2026-03-22 23:12:54 - RQ2 - INFO -   - DATA_LEAKAGE
+2026-03-22 23:12:54 - RQ2 - INFO -   - MODULE_ORDER_VIOLATION
+2026-03-22 23:12:54 - RQ2 - INFO -   - MISSING_VALIDATION
+2026-03-22 23:12:54 - RQ2 - INFO -   - INEFFICIENT_AGGREGATION
+2026-03-22 23:12:54 - RQ2 - INFO -   - IMPROPER_MODULE_COHESION
+2026-03-22 23:12:54 - RQ2 - INFO -   - LARGE_DATA_FRAME_OPERATION
+2026-03-22 23:12:54 - RQ2 - INFO -   - CIRCULAR_DEPENDENCY
+2026-03-22 23:12:54 - RQ2 - INFO -   - PIPELINE_FRAGMENTATION
+2026-03-22 23:12:54 - RQ2 - INFO -   - UNNECESSARY_MATERIALIZATION
+2026-03-22 23:12:54 - RQ2 - INFO -   - NON_DETERMINISTIC_ORDER
+2026-03-22 23:12:54 - RQ2 - INFO -   - REPEATED_TRANSFORM
+2026-03-22 23:12:54 - RQ2 - INFO - 
+所有方法都能检测的Smell类型: 1
+2026-03-22 23:12:54 - RQ2 - INFO -   - HARDCODED_PARAMETERS
+2026-03-22 23:12:54 - RQ2 - INFO - 
+执行统计显著性检验...
+2026-03-22 23:12:54 - RQ2 - INFO - 
+覆盖能力分析已保存到: experiments\results\rq2\coverage_analysis.json
+2026-03-22 23:12:54 - RQ2 - INFO - ================================================================================
+2026-03-22 23:12:54 - RQ2 - INFO - RQ2实验完成
+2026-03-22 23:12:54 - RQ2 - INFO - ================================================================================
