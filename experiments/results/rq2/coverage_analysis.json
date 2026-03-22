@@ -1,0 +1,189 @@
+{
+  "smell_types_by_method": {
+    "Pipeline-aware": [
+      "MISSING_VALIDATION",
+      "MISSING_RANDOM_SEED",
+      "REPEATED_TRANSFORM",
+      "REDUNDANT_OPERATION",
+      "EXCESSIVE_COPY",
+      "PIPELINE_FRAGMENTATION",
+      "UNNECESSARY_MATERIALIZATION",
+      "LARGE_DATA_FRAME_OPERATION",
+      "LACK_OF_VERSION_CONTROL",
+      "IMPROPER_MODULE_COHESION",
+      "HARDCODED_PARAMETERS",
+      "CIRCULAR_DEPENDENCY",
+      "DATA_LEAKAGE",
+      "MISSING_EVALUATION",
+      "MISSING_DATA_PROFILING",
+      "MODULE_ORDER_VIOLATION",
+      "NON_DETERMINISTIC_ORDER",
+      "INEFFICIENT_AGGREGATION"
+    ],
+    "Baseline-Keyword": [
+      "MISSING_EVALUATION",
+      "MISSING_RANDOM_SEED",
+      "HARDCODED_PARAMETERS"
+    ],
+    "Baseline-Heuristic": [
+      "EXCESSIVE_COPY",
+      "MISSING_RANDOM_SEED",
+      "MISSING_DATA_PROFILING",
+      "HARDCODED_PARAMETERS"
+    ],
+    "Baseline-SonarQube": [
+      "REDUNDANT_OPERATION",
+      "HARDCODED_PARAMETERS"
+    ],
+    "Baseline-PMD": [
+      "EXCESSIVE_COPY",
+      "REDUNDANT_OPERATION",
+      "HARDCODED_PARAMETERS",
+      "LACK_OF_VERSION_CONTROL"
+    ]
+  },
+  "unique_to_pipeline_aware": [
+    "MISSING_VALIDATION",
+    "REPEATED_TRANSFORM",
+    "UNNECESSARY_MATERIALIZATION",
+    "LARGE_DATA_FRAME_OPERATION",
+    "IMPROPER_MODULE_COHESION",
+    "CIRCULAR_DEPENDENCY",
+    "DATA_LEAKAGE",
+    "MODULE_ORDER_VIOLATION",
+    "NON_DETERMINISTIC_ORDER",
+    "PIPELINE_FRAGMENTATION",
+    "INEFFICIENT_AGGREGATION"
+  ],
+  "common_to_all": [
+    "HARDCODED_PARAMETERS"
+  ],
+  "coverage_matrix": {
+    "MISSING_VALIDATION": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": false,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": false
+    },
+    "MISSING_RANDOM_SEED": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": true,
+      "Baseline-Heuristic": true,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": false
+    },
+    "REDUNDANT_OPERATION": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": false,
+      "Baseline-SonarQube": true,
+      "Baseline-PMD": true
+    },
+    "EXCESSIVE_COPY": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": true,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": true
+    },
+    "REPEATED_TRANSFORM": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": false,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": false
+    },
+    "UNNECESSARY_MATERIALIZATION": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": false,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": false
+    },
+    "LARGE_DATA_FRAME_OPERATION": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": false,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": false
+    },
+    "LACK_OF_VERSION_CONTROL": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": false,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": true
+    },
+    "IMPROPER_MODULE_COHESION": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": false,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": false
+    },
+    "HARDCODED_PARAMETERS": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": true,
+      "Baseline-Heuristic": true,
+      "Baseline-SonarQube": true,
+      "Baseline-PMD": true
+    },
+    "CIRCULAR_DEPENDENCY": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": false,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": false
+    },
+    "DATA_LEAKAGE": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": false,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": false
+    },
+    "MISSING_EVALUATION": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": true,
+      "Baseline-Heuristic": false,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": false
+    },
+    "MISSING_DATA_PROFILING": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": true,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": false
+    },
+    "MODULE_ORDER_VIOLATION": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": false,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": false
+    },
+    "NON_DETERMINISTIC_ORDER": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": false,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": false
+    },
+    "PIPELINE_FRAGMENTATION": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": false,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": false
+    },
+    "INEFFICIENT_AGGREGATION": {
+      "Pipeline-aware": true,
+      "Baseline-Keyword": false,
+      "Baseline-Heuristic": false,
+      "Baseline-SonarQube": false,
+      "Baseline-PMD": false
+    }
+  }
+}

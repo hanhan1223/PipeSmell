@@ -1,0 +1,141 @@
+{
+  "total_matches": 22,
+  "total_false_positives": 0,
+  "total_false_negatives": 0,
+  "matches": [
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_01_data_leakage.py:20:DATA_LEAKAGE",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_01_data_leakage.py:16:DATA_LEAKAGE",
+      "smell_type": "DATA_LEAKAGE",
+      "match_score": 0.5555555555555556
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_02_missing_random_seed.py:17:MISSING_RANDOM_SEED",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_02_missing_random_seed.py:13:MISSING_RANDOM_SEED",
+      "smell_type": "MISSING_RANDOM_SEED",
+      "match_score": 0.5555555555555556
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_03_missing_validation.py:17:MISSING_VALIDATION",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_03_missing_validation.py:14:MISSING_VALIDATION",
+      "smell_type": "MISSING_VALIDATION",
+      "match_score": 0.6666666666666667
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_04_repeated_transform.py:24:REPEATED_TRANSFORM",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_04_repeated_transform.py:17:REPEATED_TRANSFORM",
+      "smell_type": "REPEATED_TRANSFORM",
+      "match_score": 0.2222222222222222
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_05_missing_evaluation.py:20:MISSING_EVALUATION",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_05_missing_evaluation.py:19:MISSING_EVALUATION",
+      "smell_type": "MISSING_EVALUATION",
+      "match_score": 0.8888888888888888
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_06_hardcoded_parameters.py:19:HARDCODED_PARAMETERS",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_06_hardcoded_parameters.py:16:HARDCODED_PARAMETERS",
+      "smell_type": "HARDCODED_PARAMETERS",
+      "match_score": 0.6666666666666667
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_07_nondeterministic_order.py:16:NON_DETERMINISTIC_ORDER",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_07_nondeterministic_order.py:12:NON_DETERMINISTIC_ORDER",
+      "smell_type": "NON_DETERMINISTIC_ORDER",
+      "match_score": 0.5555555555555556
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_08_inefficient_aggregation.py:17:INEFFICIENT_AGGREGATION",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_08_inefficient_aggregation.py:14:INEFFICIENT_AGGREGATION",
+      "smell_type": "INEFFICIENT_AGGREGATION",
+      "match_score": 0.6666666666666667
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_09_missing_data_profiling.py:14:MISSING_DATA_PROFILING",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_09_missing_data_profiling.py:11:MISSING_DATA_PROFILING",
+      "smell_type": "MISSING_DATA_PROFILING",
+      "match_score": 0.6666666666666667
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_10_redundant_operation.py:16:REDUNDANT_OPERATION",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_10_redundant_operation.py:13:REDUNDANT_OPERATION",
+      "smell_type": "REDUNDANT_OPERATION",
+      "match_score": 0.6666666666666667
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_11_excessive_copy.py:18:EXCESSIVE_COPY",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_11_excessive_copy.py:13:EXCESSIVE_COPY",
+      "smell_type": "EXCESSIVE_COPY",
+      "match_score": 0.4444444444444444
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_12_module_order_violation.py:26:MODULE_ORDER_VIOLATION",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_12_module_order_violation.py:19:MODULE_ORDER_VIOLATION",
+      "smell_type": "MODULE_ORDER_VIOLATION",
+      "match_score": 0.2222222222222222
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_13_circular_dependency.py:12:CIRCULAR_DEPENDENCY",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_13_circular_dependency.py:10:CIRCULAR_DEPENDENCY",
+      "smell_type": "CIRCULAR_DEPENDENCY",
+      "match_score": 0.7777777777777778
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_14_improper_module_cohesion.py:1:IMPROPER_MODULE_COHESION",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_14_improper_module_cohesion.py:1:IMPROPER_MODULE_COHESION",
+      "smell_type": "IMPROPER_MODULE_COHESION",
+      "match_score": 1.0
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_15_pipeline_fragmentation.py:12:PIPELINE_FRAGMENTATION",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_15_pipeline_fragmentation.py:13:PIPELINE_FRAGMENTATION",
+      "smell_type": "PIPELINE_FRAGMENTATION",
+      "match_score": 0.8888888888888888
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_16_unnecessary_materialization.py:20:UNNECESSARY_MATERIALIZATION",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_16_unnecessary_materialization.py:16:UNNECESSARY_MATERIALIZATION",
+      "smell_type": "UNNECESSARY_MATERIALIZATION",
+      "match_score": 0.5555555555555556
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_17_large_dataframe_operation.py:20:LARGE_DATA_FRAME_OPERATION",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_17_large_dataframe_operation.py:15:LARGE_DATA_FRAME_OPERATION",
+      "smell_type": "LARGE_DATA_FRAME_OPERATION",
+      "match_score": 0.4444444444444444
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_18_lack_version_control.py:1:LACK_OF_VERSION_CONTROL",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_18_lack_version_control.py:1:LACK_OF_VERSION_CONTROL",
+      "smell_type": "LACK_OF_VERSION_CONTROL",
+      "match_score": 1.0
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_20_multiple_smells.py:18:DATA_LEAKAGE",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_20_multiple_smells.py:13:DATA_LEAKAGE",
+      "smell_type": "DATA_LEAKAGE",
+      "match_score": 0.4444444444444444
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_20_multiple_smells.py:31:MISSING_EVALUATION",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_20_multiple_smells.py:28:MISSING_EVALUATION",
+      "smell_type": "MISSING_EVALUATION",
+      "match_score": 0.6666666666666667
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_20_multiple_smells.py:21:MISSING_RANDOM_SEED",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_20_multiple_smells.py:16:MISSING_RANDOM_SEED",
+      "smell_type": "MISSING_RANDOM_SEED",
+      "match_score": 0.4444444444444444
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\example_20_multiple_smells.py:24:HARDCODED_PARAMETERS",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\example_20_multiple_smells.py:19:HARDCODED_PARAMETERS",
+      "smell_type": "HARDCODED_PARAMETERS",
+      "match_score": 0.4444444444444444
+    }
+  ],
+  "false_positives": [],
+  "false_negatives": []
+}

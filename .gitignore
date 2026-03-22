@@ -4,7 +4,6 @@ __pycache__/
 .coverage
 htmlcov/
 data/raw/repos/
-experiments/results/
 experiments/figures/
 .DS_Store
 *.egg-info/

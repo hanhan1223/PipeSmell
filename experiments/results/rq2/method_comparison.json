@@ -1,0 +1,620 @@
+{
+  "methods": [
+    {
+      "name": "Pipeline-aware",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "runtime_ms": 4.2476654052734375
+    },
+    {
+      "name": "Baseline-Keyword",
+      "precision": 0.10810810810810811,
+      "recall": 0.18181818181818182,
+      "f1_score": 0.13559322033898308,
+      "runtime_ms": 4.345178604125977
+    },
+    {
+      "name": "Baseline-Heuristic",
+      "precision": 0.10714285714285714,
+      "recall": 0.13636363636363635,
+      "f1_score": 0.11999999999999998,
+      "runtime_ms": 1.9962787628173828
+    },
+    {
+      "name": "Baseline-PMD",
+      "precision": 0.02564102564102564,
+      "recall": 0.09090909090909091,
+      "f1_score": 0.04,
+      "runtime_ms": 1.3628005981445312
+    },
+    {
+      "name": "Baseline-SonarQube",
+      "precision": 0.017241379310344827,
+      "recall": 0.045454545454545456,
+      "f1_score": 0.025,
+      "runtime_ms": 1.2323856353759766
+    }
+  ],
+  "overall_comparison": {},
+  "per_smell_comparison": {
+    "EXCESSIVE_COPY": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "f1_score": 0.5
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "LARGE_DATA_FRAME_OPERATION": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "MISSING_RANDOM_SEED": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.07692307692307693,
+        "recall": 0.5,
+        "f1_score": 0.13333333333333336
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1_score": 0.6666666666666666
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "MISSING_VALIDATION": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "PIPELINE_FRAGMENTATION": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "REDUNDANT_OPERATION": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.025,
+        "recall": 1.0,
+        "f1_score": 0.04878048780487806
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.05,
+        "recall": 1.0,
+        "f1_score": 0.09523809523809523
+      }
+    ],
+    "REPEATED_TRANSFORM": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "UNNECESSARY_MATERIALIZATION": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "LACK_OF_VERSION_CONTROL": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "IMPROPER_MODULE_COHESION": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "CIRCULAR_DEPENDENCY": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "HARDCODED_PARAMETERS": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.2857142857142857,
+        "recall": 1.0,
+        "f1_score": 0.4444444444444445
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.043478260869565216,
+        "recall": 0.5,
+        "f1_score": 0.08
+      }
+    ],
+    "DATA_LEAKAGE": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "MISSING_EVALUATION": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.058823529411764705,
+        "recall": 0.5,
+        "f1_score": 0.10526315789473684
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "MISSING_DATA_PROFILING": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "MODULE_ORDER_VIOLATION": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "NON_DETERMINISTIC_ORDER": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ],
+    "INEFFICIENT_AGGREGATION": [
+      {
+        "method": "Pipeline-aware",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      {
+        "method": "Baseline-Keyword",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-Heuristic",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-SonarQube",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      {
+        "method": "Baseline-PMD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    ]
+  },
+  "best_method": "Pipeline-aware",
+  "best_f1": 1.0
+}

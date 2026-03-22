@@ -1,0 +1,57 @@
+{
+  "total_matches": 8,
+  "total_false_positives": 0,
+  "total_false_negatives": 0,
+  "matches": [
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\external\\ext_01_data_leakage_style.py:14:DATA_LEAKAGE",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\external\\ext_01_data_leakage_style.py:14:DATA_LEAKAGE",
+      "smell_type": "DATA_LEAKAGE",
+      "match_score": 1.0
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\external\\ext_02_missing_random_seed_style.py:12:MISSING_RANDOM_SEED",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\external\\ext_02_missing_random_seed_style.py:12:MISSING_RANDOM_SEED",
+      "smell_type": "MISSING_RANDOM_SEED",
+      "match_score": 1.0
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\external\\ext_04_missing_validation_style.py:12:MISSING_VALIDATION",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\external\\ext_04_missing_validation_style.py:12:MISSING_VALIDATION",
+      "smell_type": "MISSING_VALIDATION",
+      "match_score": 1.0
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\external\\ext_05_inefficient_loop_style.py:12:INEFFICIENT_AGGREGATION",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\external\\ext_05_inefficient_loop_style.py:12:INEFFICIENT_AGGREGATION",
+      "smell_type": "INEFFICIENT_AGGREGATION",
+      "match_score": 1.0
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\external\\ext_06_repeated_scaler_style.py:17:REPEATED_TRANSFORM",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\external\\ext_06_repeated_scaler_style.py:17:REPEATED_TRANSFORM",
+      "smell_type": "REPEATED_TRANSFORM",
+      "match_score": 1.0
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\external\\ext_07_nondeterministic_style.py:7:NON_DETERMINISTIC_ORDER",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\external\\ext_07_nondeterministic_style.py:7:NON_DETERMINISTIC_ORDER",
+      "smell_type": "NON_DETERMINISTIC_ORDER",
+      "match_score": 1.0
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\external\\ext_08_module_order_style.py:20:MODULE_ORDER_VIOLATION",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\external\\ext_08_module_order_style.py:20:MODULE_ORDER_VIOLATION",
+      "smell_type": "MODULE_ORDER_VIOLATION",
+      "match_score": 1.0
+    },
+    {
+      "prediction_id": "D:\\PipeSmell\\dataset\\external\\ext_09_intermediate_csv_style.py:7:UNNECESSARY_MATERIALIZATION",
+      "ground_truth_id": "D:\\PipeSmell\\dataset\\external\\ext_09_intermediate_csv_style.py:7:UNNECESSARY_MATERIALIZATION",
+      "smell_type": "UNNECESSARY_MATERIALIZATION",
+      "match_score": 1.0
+    }
+  ],
+  "false_positives": [],
+  "false_negatives": []
+}
